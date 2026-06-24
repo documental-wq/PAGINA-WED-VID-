@@ -4,21 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" href="logo.png">
-  <meta name="description" content="Armería VIP Technologies — Diagnóstico avanzado, mantenimiento preventivo, reparación técnica y restauración premium de elementos de seguridad en Medellín. Ingeniería de precisión con tolerancia cero.">
+  <meta name="description" content="Armería VID Technologies — Diagnóstico avanzado, mantenimiento preventivo, reparación técnica y restauración premium de elementos de seguridad en Medellín. Ingeniería de precisión con tolerancia cero.">
   <meta name="keywords" content="mantenimiento armas Medellín, reparación elementos seguridad, limpieza ultrasónica, restauración armamento, armería técnica Colombia, mantenimiento preventivo seguridad privada">
-  <meta name="author" content="Armería VIP Technologies">
+  <meta name="author" content="Armería VID Technologies">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.armeriavip.com/">
-  <meta property="og:title" content="Armería VIP Technologies — Ingeniería de Precisión">
+  <meta property="og:url" content="https://www.armeriavid.com/">
+  <meta property="og:title" content="Armería VID Technologies — Ingeniería de Precisión">
   <meta property="og:description" content="Maximizamos la fiabilidad de tus activos de seguridad mediante ingeniería de precisión y tolerancia cero.">
-  <meta property="og:image" content="https://www.armeriavip.com/og-image.jpg">
+  <meta property="og:image" content="https://www.armeriavid.com/og-image.jpg">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Armería VIP Technologies">
+  <meta name="twitter:title" content="Armería VID Technologies">
   <meta name="twitter:description" content="Diagnóstico, mantenimiento y restauración premium. Medellín, Colombia.">
 
   <!-- Schema.org JSON-LD -->
@@ -26,11 +26,11 @@
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Armería VIP Technologies",
+    "name": "Armería VID Technologies",
     "description": "Servicios especializados de diagnóstico, mantenimiento preventivo, reparación técnica y restauración de elementos de seguridad",
-    "url": "https://www.armeriavip.com",
+    "url": "https://www.armeriavid.com",
     "telephone": "+57-XXX-XXXXXXX",
-    "email": "contacto@armeriavip.com",
+    "email": "contacto@armeriavid.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Medellín",
@@ -46,12 +46,12 @@
   }
   </script>
 
-  <title>Armería VIP Technologies — Ingeniería de Precisión y Mantenimiento Avanzado</title>
+  <title>Armería VID — Ingeniería de Precisión y Mantenimiento Avanzado</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400&family=JetBrains+Mono:wght@400&family=Bebas+Neue&family=Montserrat:wght@300;400;500;700&family=Teko:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     /* ============================================================
@@ -681,168 +681,19 @@
     }
 
     /* Logo */
-    .navbar-logo {
-      display: flex;
-      align-items: center;
-      gap: var(--space-3);
+    .navbar-logo-clean {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--color-text-primary);
       text-decoration: none;
-      flex-shrink: 0;
-    }
-
-    .navbar-logo-wrapper {
-      position: relative;
-      width: 58px;
-      height: 58px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .navbar-logo-image-container {
-      position: relative;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      overflow: hidden;
-      z-index: 2;
-      border: 1.8px solid var(--color-gold);
-      transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 300ms ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      animation: logoPulseGlow 4s ease-in-out infinite;
-    }
-
-    .navbar-logo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transform: scale(1.35); /* Zoom in to crop white margins on the sides */
-    }
-
-    /* Outer Reticle Ring */
-    .navbar-logo-reticle {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      border: 1px dashed rgba(201,162,39,0.6);
-      z-index: 1;
-      pointer-events: none;
-      animation: logoReticleRotate 20s linear infinite;
-      transition: border-color 300ms ease, transform 300ms ease;
-    }
-
-    /* Inner Reticle crosshair ticks */
-    .navbar-logo-reticle::before,
-    .navbar-logo-reticle::after {
-      content: '';
-      position: absolute;
-      background: var(--color-gold);
-      opacity: 0.35;
-      transition: opacity 300ms ease;
-    }
-    /* Horizontal ticks */
-    .navbar-logo-reticle::before {
-      top: 50%;
-      left: -2px;
-      right: -2px;
-      height: 1px;
-      transform: translateY(-50%);
-    }
-    /* Vertical ticks */
-    .navbar-logo-reticle::after {
-      left: 50%;
-      top: -2px;
-      bottom: -2px;
-      width: 1px;
-      transform: translateX(-50%);
-    }
-
-    /* Shimmer effect inside logo */
-    .navbar-logo-image-container::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.45) 50%, transparent 70%);
-      z-index: 3;
-      pointer-events: none;
-      transform: translateX(-100%) translateY(-100%);
-      animation: logoShine 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    }
-
-    /* Hover States for Logo */
-    .navbar-logo:hover .navbar-logo-image-container {
-      transform: scale(1.08);
-      border-color: var(--color-gold-light);
-      box-shadow: 0 0 18px rgba(201,162,39,0.6);
-      animation-play-state: paused; /* Pause slow pulse on hover to highlight interactive state */
-    }
-
-    .navbar-logo:hover .navbar-logo-reticle {
-      border-color: var(--color-gold-light);
-      border-style: solid;
-      transform: scale(1.1) rotate(45deg);
-      animation: logoReticleRotate 4s linear infinite;
-    }
-
-    .navbar-logo:hover .navbar-logo-reticle::before,
-    .navbar-logo:hover .navbar-logo-reticle::after {
-      opacity: 0.8;
-    }
-
-    @keyframes logoPulseGlow {
-      0%, 100% {
-        box-shadow: 0 0 8px rgba(201,162,39,0.18);
-        border-color: var(--color-gold-deep);
-      }
-      50% {
-        box-shadow: 0 0 20px rgba(201,162,39,0.45);
-        border-color: var(--color-gold-light);
-      }
-    }
-
-
-    @keyframes logoReticleRotate {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    @keyframes logoShine {
-      0% { transform: translate(-100%, -100%) rotate(45deg); }
-      15% { transform: translate(100%, 100%) rotate(45deg); }
-      100% { transform: translate(100%, 100%) rotate(45deg); }
-    }
-
-    .navbar-logo-text {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.1;
-    }
-
-    .navbar-logo-name {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: 1.25rem;
-      background: var(--gradient-gold);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
       letter-spacing: 0.08em;
-    }
-
-    .navbar-logo-sub {
-      font-family: var(--font-ui);
-      font-weight: 600;
-      font-size: 0.65rem;
-      color: var(--color-text-secondary);
-      letter-spacing: 0.45em;
       text-transform: uppercase;
+      transition: color 300ms ease, text-shadow 300ms ease;
+    }
+    .navbar-logo-clean:hover {
+      color: #FFB300; /* Tactical Yellow */
+      text-shadow: 0 0 10px rgba(255, 179, 0, 0.4);
     }
 
     /* Nav links */
@@ -853,12 +704,12 @@
     }
 
     .navbar-link {
-      font-family: var(--font-ui);
+      font-family: 'Montserrat', sans-serif;
       font-weight: 500;
-      font-size: var(--text-sm);
+      font-size: 15px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--color-text-secondary);
+      color: var(--color-text-primary);
       transition: color 200ms ease;
       position: relative;
     }
@@ -869,8 +720,8 @@
       bottom: -4px;
       left: 0;
       right: 0;
-      height: 1px;
-      background: var(--color-gold);
+      height: 1.5px;
+      background: #FFB300;
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 250ms ease;
@@ -878,7 +729,7 @@
 
     .navbar-link:hover,
     .navbar-link[aria-current="page"] {
-      color: var(--color-gold);
+      color: #FFB300;
     }
 
     .navbar-link:hover::after { transform: scaleX(1); }
@@ -978,274 +829,336 @@
     /* ============================================================
        HERO
     ============================================================ */
+    /* ============================================================
+       HERO (REDISEÑO PREMIUM E INTERACTIVO)
+    ============================================================ */
     #hero {
-      min-height: 100vh;
-      background: var(--gradient-hero), var(--color-obsidian);
-      display: grid;
-      align-items: center;
       position: relative;
+      min-height: 100vh;
+      background-color: #111111; /* Negro mate táctico */
       overflow: hidden;
-      padding-top: 80px;
-    }
-
-    /* Laser Scan Line */
-    .hero-scan-line {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent 0%, var(--color-gold) 50%, transparent 100%);
-      box-shadow: 0 0 8px rgba(201, 162, 39, 0.4), 0 0 20px rgba(201, 162, 39, 0.2);
-      z-index: 5;
-      pointer-events: none;
-      opacity: 0;
-      animation: laserScan 7s ease-in-out infinite;
-    }
-
-    @keyframes laserScan {
-      0% { top: 0%; opacity: 0; }
-      5% { opacity: 0.5; }
-      95% { opacity: 0.5; }
-      100% { top: 100%; opacity: 0; }
-    }
-
-    /* HUD Coordinate Tags */
-    .hero-hud-tag {
-      position: absolute;
-      font-family: var(--font-mono);
-      font-size: 8.5px;
-      color: rgba(201, 162, 39, 0.3);
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      letter-spacing: 0.18em;
-      pointer-events: none;
-      z-index: 2;
-      line-height: 1.4;
-    }
-
-    .hud-tag-top-left {
-      top: 110px;
-      left: var(--container-padding);
-      border-left: 1px solid rgba(201, 162, 39, 0.2);
-      border-top: 1px solid rgba(201, 162, 39, 0.2);
-      padding: 6px 0 0 6px;
-    }
-
-    .hud-tag-bottom-left {
-      bottom: 40px;
-      left: var(--container-padding);
-      border-left: 1px solid rgba(201, 162, 39, 0.2);
-      border-bottom: 1px solid rgba(201, 162, 39, 0.2);
-      padding: 0 0 6px 6px;
-    }
-
-    .hud-tag-top-right {
-      top: 110px;
-      right: var(--container-padding);
-      border-right: 1px solid rgba(201, 162, 39, 0.2);
-      border-top: 1px solid rgba(201, 162, 39, 0.2);
-      padding: 6px 6px 0 0;
-      text-align: right;
-    }
-
-    /* SVG background grid */
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(201,162,39,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,162,39,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-16);
+      justify-content: center;
       align-items: center;
-      padding: var(--space-16) 0;
-      position: relative;
+      padding-top: 88px;
       z-index: 1;
     }
 
-    /* Hero badge */
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: var(--space-2);
-      background: var(--color-gold-subtle);
-      border: 1px solid var(--color-border);
-      padding: 6px 16px;
-      border-radius: var(--radius-sm);
-      font-family: var(--font-ui);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.3em;
-      color: var(--color-gold);
-      margin-bottom: var(--space-6);
-      animation: fadeInUp 600ms ease both;
-      animation-delay: 0ms;
-    }
-
-    .hero-badge-icon {
-      font-size: 0.7rem;
-      opacity: 0.8;
-    }
-
-    /* Hero title */
-    .hero-title {
-      font-family: var(--font-display);
-      font-weight: 300;
-      font-size: var(--text-hero);
-      line-height: 0.95;
-      color: var(--color-text-primary);
-      margin-bottom: var(--space-6);
-      animation: fadeInUp 600ms ease both;
-      animation-delay: 100ms;
-    }
-
-    .hero-title-accent {
-      background: var(--gradient-gold);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* Hero subtitle */
-    .hero-subtitle {
-      font-family: var(--font-body);
-      font-weight: 300;
-      font-size: 1.1rem;
-      color: var(--color-text-secondary);
-      max-width: 480px;
-      line-height: 1.7;
-      margin-bottom: var(--space-8);
-      animation: fadeInUp 600ms ease both;
-      animation-delay: 250ms;
-    }
-
-    /* Hero stats */
-    .hero-stats {
-      display: flex;
-      align-items: center;
-      gap: 0;
-      margin-bottom: var(--space-8);
-      animation: fadeInUp 600ms ease both;
-      animation-delay: 400ms;
-    }
-
-    .hero-stat {
-      flex: 1;
-      padding: var(--space-4) var(--space-6);
-      position: relative;
-    }
-
-    .hero-stat + .hero-stat::before {
-      content: '';
+    /* Video Background (Engranajes) */
+    .hero-video-bg {
       position: absolute;
-      left: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: var(--color-border);
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
     }
 
-    .hero-stat-value {
-      font-family: var(--font-display);
-      font-weight: 600;
-      font-size: var(--text-xl);
-      color: var(--color-gold);
-      display: block;
+    .hero-video-bg video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.08; /* Muy sutil */
+      filter: grayscale(80%) contrast(120%);
     }
 
-    .hero-stat-label {
-      font-family: var(--font-ui);
-      font-size: var(--text-xs);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--color-text-muted);
+    .hero-video-bg .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 20%, #111111 85%);
     }
 
-    /* Hero CTAs */
-    .hero-ctas {
+    /* Particle Canvas */
+    #particleCanvas {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Giant Background Text */
+    .hero-bg-text-container {
+      position: absolute;
+      inset: 0;
       display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-3);
-      margin-bottom: var(--space-8);
-      animation: fadeInUp 600ms ease both;
-      animation-delay: 550ms;
-    }
-
-    .btn-primary.btn-hero {
-      padding: var(--space-4) var(--space-8);
-      font-size: var(--text-sm);
-    }
-
-    /* Trust badges */
-    .hero-trust {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: var(--space-4);
-      animation: fadeInUp 600ms ease both;
-      animation-delay: 650ms;
-    }
-
-    .hero-trust-item {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-      font-family: var(--font-ui);
-      font-size: var(--text-xs);
-      font-weight: 500;
-      color: var(--color-text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-
-    .hero-trust-item svg {
-      color: var(--color-gold);
-      opacity: 0.7;
-      flex-shrink: 0;
-    }
-
-    /* Hero visual */
-    .hero-visual {
-      display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
-      animation: fadeInRight 800ms ease both;
+      align-items: center;
+      pointer-events: none;
+      z-index: 1;
+      user-select: none;
+      overflow: hidden;
+    }
+
+    .hero-bg-text-row {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(100px, 15vw, 240px);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.04);
+      letter-spacing: 0.08em;
+      line-height: 0.85;
+      white-space: nowrap;
+      text-transform: uppercase;
+    }
+
+    .text-row-left {
+      align-self: flex-start;
+      transform: translateX(-4%);
+    }
+
+    .text-row-right {
+      align-self: flex-end;
+      transform: translateX(4%);
+    }
+
+    /* Center Content Container */
+    .hero-center-wrapper {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: var(--container-max);
+      padding: 0 var(--container-padding);
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+
+    /* Hero Left Content */
+    .hero-left-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      z-index: 10;
+      text-align: left;
+      animation: fadeInLeft 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
       animation-delay: 200ms;
     }
 
-    .reticle-svg {
+    .hero-badge {
+      align-self: flex-start;
+      background: rgba(255, 179, 0, 0.08);
+      border: 1px solid rgba(255, 179, 0, 0.2);
+      color: var(--color-gold);
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+
+    .hero-main-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      line-height: 0.95;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--color-text-primary);
+    }
+
+    .hero-main-title span.accent {
+      color: var(--color-gold);
+      text-shadow: 0 0 15px rgba(255, 179, 0, 0.35);
+    }
+
+    .hero-main-desc {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: clamp(14px, 1.3vw, 16px);
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      max-width: 520px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: var(--space-4);
+      margin-top: var(--space-2);
+    }
+
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translate3d(-30px, 0, 0); }
+      to   { opacity: 1; transform: translate3d(0, 0, 0); }
+    }
+
+    /* Weapon Container & Wrapper (3D Parallax/Tilt) */
+    .weapon-3d-container {
       width: 100%;
-      max-width: 480px;
+      max-width: 600px;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      perspective: 1200px;
     }
 
-    .reticle-outer-ring {
-      animation: rotateSlow 60s linear infinite;
-      transform-origin: 240px 240px;
+    .weapon-3d-wrapper {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      will-change: transform;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.1s ease-out;
     }
 
-    @keyframes rotateSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    .weapon-3d-video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      pointer-events: none;
+      filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.95));
+      transform: translateZ(20px);
+      /* Máscara de degradado radial para fundir bordes rectos del video */
+      -webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 88%);
+      mask-image: radial-gradient(circle, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 88%);
+    }
+
+    /* Hotspots */
+    .hotspot {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      z-index: 30;
+      transform: translate(-50%, -50%) translateZ(40px);
+      background: none;
+      border: none;
+      padding: 0;
+      outline: none;
+    }
+
+    .hotspot-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: #FFB300; /* Amarillo táctico */
+      border-radius: 50%;
+      top: 5px;
+      left: 5px;
+      box-shadow: 0 0 10px #FFB300, 0 0 20px #FFB300;
+      transition: background-color 300ms ease, box-shadow 300ms ease;
+    }
+
+    .hotspot:hover .hotspot-dot {
+      background-color: #FFF;
+      box-shadow: 0 0 15px #FFF, 0 0 30px #FFB300;
+    }
+
+    .hotspot-pulse {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border: 1.5px solid #FFB300;
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      animation: hotspotPulseAnim 1.8s infinite ease-out;
+      pointer-events: none;
+    }
+
+    @keyframes hotspotPulseAnim {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+
+    /* Hotspot Tooltip Cards (Glassmorphism Callouts) */
+    .hotspot-tooltip-card {
+      position: absolute;
+      width: 250px;
+      padding: var(--space-4);
+      background: rgba(20, 20, 24, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 179, 0, 0.25);
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      opacity: 0;
+      transform: scale(0.9) translate3d(0, 10px, 0);
+      pointer-events: none;
+      z-index: 40;
+      transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+      font-family: 'Montserrat', sans-serif;
+      color: var(--color-text-primary);
+      text-align: left;
+    }
+
+    .hotspot-tooltip-card.is-visible {
+      opacity: 1;
+      transform: scale(1) translate3d(0, 0, 60px); /* Lifts out of the weapon */
+      pointer-events: auto;
+    }
+
+    .tooltip-canon {
+      top: 25%;
+      left: 6%;
+    }
+
+    .tooltip-corredera {
+      top: 8%;
+      right: 6%;
+    }
+
+    .tooltip-gatillo {
+      top: 65%;
+      right: 6%;
+    }
+
+    .tooltip-title {
+      font-weight: 700;
+      font-size: var(--text-sm);
+      color: #FFB300;
+      margin-bottom: var(--space-2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tooltip-desc {
+      font-size: var(--text-xs);
+      color: var(--color-text-secondary);
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    /* Bottom Motivational Phrase */
+    .hero-footer-phrase {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+      z-index: 15;
+      font-family: 'Teko', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: var(--color-text-primary);
+      animation: fadeInUpPhrase 800ms ease both;
+      animation-delay: 400ms;
+    }
+
+    .hero-footer-phrase span.accent {
+      color: #FFB300; /* Tactical Yellow */
+      text-shadow: 0 0 10px rgba(255, 179, 0, 0.4);
+    }
+
+    @keyframes fadeInUpPhrase {
+      from { opacity: 0; transform: translate3d(-50%, 20px, 0); }
+      to   { opacity: 1; transform: translate3d(-50%, 0, 0); }
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeInRight {
-      from { opacity: 0; transform: translateX(40px); }
-      to   { opacity: 1; transform: translateX(0); }
+      from { opacity: 0; transform: translate3d(0, 20px, 0); }
+      to   { opacity: 1; transform: translate3d(0, 0, 0); }
     }
 
     /* ============================================================
@@ -1326,10 +1239,131 @@
       line-height: 1.8;
     }
 
-    .values-grid {
+    .values-horizontal-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-4);
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-6);
+      margin-top: var(--space-16);
+    }
+
+    /* Video Side Styling */
+    .about-video-side {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+    }
+
+    .about-video-wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      background: var(--color-carbon);
+      border: 1px solid rgba(255, 179, 0, 0.15);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      transition: border-color 300ms ease, box-shadow 300ms ease;
+    }
+
+    .about-video-wrapper:hover {
+      border-color: rgba(255, 179, 0, 0.35);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .about-video-wrapper video {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.7) contrast(1.1);
+      transition: filter 300ms ease;
+    }
+
+    .about-video-wrapper:hover video {
+      filter: brightness(0.85) contrast(1.1);
+    }
+
+    .about-video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.2) 50%, rgba(10, 10, 10, 0.7) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--space-6);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .about-video-overlay * {
+      pointer-events: auto; /* Re-enable pointer events for controls */
+    }
+
+    .video-status-indicator {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #00ff66;
+      text-shadow: 0 0 5px rgba(0, 255, 102, 0.5);
+    }
+
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      background-color: #00ff66;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00ff66;
+      animation: pulse 1s infinite alternate;
+    }
+
+    .about-video-title {
+      position: absolute;
+      bottom: var(--space-16);
+      left: var(--space-6);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      color: var(--color-text-primary);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    .about-video-controls {
+      display: flex;
+      gap: var(--space-3);
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    .video-control-btn {
+      width: 32px;
+      height: 32px;
+      background: rgba(17, 17, 17, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: var(--color-text-secondary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+      transition: background 200ms ease, border-color 200ms ease, color 200ms ease, transform 200ms ease;
+    }
+
+    .video-control-btn:hover {
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+      color: var(--color-obsidian);
+      transform: scale(1.1);
     }
 
     .value-card {
@@ -1573,6 +1607,298 @@
     /* Mobile: all services expanded */
     @media (max-width: 768px) {
       .service-expandable { max-height: 500px; }
+    }
+
+    /* ============================================================
+       TECHNICAL BLUEPRINT PANEL (SUBSECCIÓN DE SERVICIOS)
+    ============================================================ */
+    .technical-blueprint-panel {
+      margin-top: var(--space-20);
+      background: linear-gradient(to right, rgba(17,17,20,0.95), rgba(28,28,34,0.85));
+      border: 1px solid rgba(255, 179, 0, 0.15);
+      border-radius: var(--radius-lg);
+      padding: var(--space-10) var(--space-8);
+      position: relative;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    }
+
+    .blueprint-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+
+    /* Video & HUD frame styling */
+    .blueprint-video-side {
+      width: 100%;
+    }
+
+    .blueprint-video-wrapper {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.8);
+    }
+
+    .blueprint-video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: grayscale(30%) brightness(0.65) contrast(1.2);
+    }
+
+    /* HUD Frame Overlay */
+    .hud-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hud-line-scanner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(180deg, transparent, var(--color-gold), transparent);
+      box-shadow: 0 0 12px var(--color-gold);
+      animation: scan 4s linear infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes scan {
+      0% { top: 0%; }
+      50% { top: 100%; }
+      100% { top: 0%; }
+    }
+
+    .hud-target-reticle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      opacity: 0.4;
+    }
+
+    .reticle-ring {
+      width: 100%;
+      height: 100%;
+      border: 1px dashed var(--color-gold);
+      border-radius: 50%;
+      animation: rotate-cw 20s linear infinite;
+    }
+
+    .reticle-line {
+      position: absolute;
+      background: var(--color-gold);
+    }
+    .reticle-line-h { top: 50%; left: -10px; width: 100px; height: 1px; }
+    .reticle-line-v { left: 50%; top: -10px; height: 100px; width: 1px; }
+
+    @keyframes rotate-cw {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .hud-tech-data {
+      position: absolute;
+      top: var(--space-4);
+      left: var(--space-4);
+      background: rgba(10, 10, 10, 0.7);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 9px;
+      line-height: 1.4;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .tech-row {
+      display: flex;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .tech-label { color: var(--color-text-muted); }
+    .tech-value { font-weight: 700; }
+    .text-green { color: #00ff66; text-shadow: 0 0 3px rgba(0,255,102,0.3); }
+    .text-gold { color: var(--color-gold); }
+
+    .blueprint-video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(10, 10, 10, 0.9) 0%, transparent 40%, rgba(10, 10, 10, 0.4) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--space-4);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    .blueprint-video-overlay * {
+      pointer-events: auto;
+    }
+
+    .blueprint-tag {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--color-text-primary);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    }
+
+    .blueprint-video-controls {
+      display: flex;
+      gap: var(--space-3);
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: auto;
+    }
+
+    /* Right side info styling */
+    .blueprint-info-side {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+    }
+
+    .blueprint-info-badge {
+      align-self: flex-start;
+      background: rgba(255, 179, 0, 0.08);
+      border: 1px solid rgba(255, 179, 0, 0.2);
+      color: var(--color-gold);
+      font-family: var(--font-ui);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+    }
+
+    .blueprint-info-title {
+      font-family: var(--font-ui);
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-primary);
+      line-height: 1.2;
+    }
+
+    .blueprint-info-desc {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+    }
+
+    .blueprint-stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      margin: var(--space-2) 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: var(--space-4) 0;
+    }
+
+    .blueprint-stat-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .stat-lbl {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .blueprint-interactive-features {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .features-title {
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-primary);
+    }
+
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+    }
+
+    .feature-bullet {
+      color: var(--color-gold);
+      font-size: var(--text-xs);
+      line-height: 1.5;
+    }
+
+    .feature-item div strong {
+      display: block;
+      font-family: var(--font-ui);
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--color-text-primary);
+      margin-bottom: 2px;
+    }
+
+    .feature-item div span {
+      font-family: var(--font-body);
+      font-weight: 300;
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      display: block;
+    }
+
+    /* Adaptabilidad del blueprint panel */
+    @media (max-width: 1024px) {
+      .blueprint-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-8);
+      }
     }
 
     /* ============================================================
@@ -2515,7 +2841,9 @@
     }
 
     @media (max-width: 1024px) {
+      .hero-center-wrapper { grid-template-columns: 1fr; gap: var(--space-8); text-align: center; justify-items: center; }
       .about-grid { grid-template-columns: 1fr; }
+      .values-horizontal-grid { grid-template-columns: repeat(2, 1fr); }
       .compliance-inner { grid-template-columns: 1fr; }
       .compliance-cols { grid-template-columns: 1fr; gap: var(--space-4); }
       .contact-inner { grid-template-columns: 1fr; }
@@ -2526,32 +2854,389 @@
 
     @media (max-width: 768px) {
       .section { padding: var(--space-16) 0; }
-      .hero-inner { grid-template-columns: 1fr; gap: var(--space-8); padding: var(--space-8) 0; }
-      .hero-visual { order: -1; }
-      .reticle-svg { max-width: 280px; margin: 0 auto; }
-      .hero-stats { flex-direction: column; }
-      .hero-stat + .hero-stat::before { display: none; }
-      .hero-stat { padding: var(--space-2) 0; }
       .services-grid { grid-template-columns: 1fr; }
       .benefits-grid { grid-template-columns: 1fr; }
       .clients-grid { grid-template-columns: 1fr; }
       .counters-row { grid-template-columns: 1fr; }
-      .values-grid { grid-template-columns: 1fr; }
+      .values-horizontal-grid { grid-template-columns: 1fr; }
       .corporate-perks { flex-direction: column; gap: var(--space-2); }
       .footer-main { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; gap: var(--space-2); text-align: center; }
       .compliance-stat-row { flex-direction: column; }
+
+      /* Adaptabilidad del visor de armas 3D */
+      .weapon-3d-container {
+        max-width: 100%;
+        height: 380px;
+      }
+      .tooltip-canon, .tooltip-corredera, .tooltip-gatillo {
+        width: 240px;
+        left: 50% !important;
+        transform: translate(-50%, 0) scale(0.9) translateZ(50px) !important;
+        top: 72% !important; /* Muestra el popup debajo del arma */
+        right: auto !important;
+      }
+      .hotspot-tooltip-card.is-visible {
+        transform: translate(-50%, 0) scale(1) translateZ(60px) !important;
+      }
+      .hero-bg-text-row {
+        font-size: clamp(70px, 16vw, 130px);
+      }
+      .hero-footer-phrase {
+        font-size: 1.3rem;
+        bottom: 20px;
+        line-height: 1.2;
+      }
     }
 
-    @media (max-width: 480px) {
-      .hero-ctas { flex-direction: column; }
-      .hero-trust { flex-direction: column; gap: var(--space-2); }
-      .section-title { font-size: var(--text-2xl); }
+    /* ============================================================
+       SHOP MODAL (TIENDA TÁCTICA VIP)
+    ============================================================ */
+    .shop-modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(10, 10, 12, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 300ms ease;
+    }
+
+    .shop-modal-overlay.is-open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .shop-modal-container {
+      width: 90%;
+      max-width: 900px;
+      background: rgba(20, 20, 24, 0.9);
+      border: 1px solid rgba(255, 179, 0, 0.2);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      position: relative;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8), 0 0 40px rgba(255, 179, 0, 0.1);
+      transform: scale(0.95);
+      transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .shop-modal-overlay.is-open .shop-modal-container {
+      transform: scale(1);
+    }
+
+    .shop-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      font-size: 2.2rem;
+      color: var(--color-text-muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 200ms ease, transform 200ms ease;
+    }
+
+    .shop-modal-close:hover {
+      color: #FFB300;
+      transform: rotate(90deg);
+    }
+
+    .shop-modal-header {
+      margin-bottom: var(--space-8);
+      text-align: center;
+    }
+
+    .shop-modal-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.2rem;
+      letter-spacing: 0.05em;
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-2);
+      text-transform: uppercase;
+    }
+
+    .shop-modal-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: var(--text-xs);
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+
+    .shop-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-6);
+      margin-bottom: var(--space-8);
+    }
+
+    .shop-product-card {
+      background: rgba(28, 28, 34, 0.7);
+      border: 1px solid rgba(255, 179, 0, 0.1);
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 300ms ease, transform 300ms ease, box-shadow 300ms ease;
+    }
+
+    .shop-product-card:hover {
+      border-color: rgba(255, 179, 0, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(255, 179, 0, 0.08);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255, 179, 0, 0.15);
+      border: 1px solid #FFB300;
+      color: #FFB300;
+      font-size: 0.65rem;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 2px;
+      letter-spacing: 0.05em;
+    }
+
+    .product-img-placeholder {
+      width: 100%;
+      height: 140px;
+      background: radial-gradient(circle, rgba(255,179,0,0.06) 0%, rgba(20,20,24,0) 80%);
+      border: 1px dashed rgba(255, 179, 0, 0.15);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: rgba(255, 179, 0, 0.3);
+      letter-spacing: 0.1em;
+    }
+
+    .product-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: var(--text-sm);
+      color: var(--color-text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .product-desc {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin-bottom: var(--space-6);
+      flex-grow: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    .product-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      color: #FFB300;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-sm {
+      padding: var(--space-2) var(--space-4);
+      font-size: var(--text-xs);
+    }
+
+    .shop-modal-footer {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: var(--space-4);
+    }
+
+    /* ============================================================
+       PRELOADER TÁCTICO
+    ============================================================ */
+    #tactical-preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--color-obsidian);
+      z-index: 99999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 800ms cubic-bezier(0.16, 1, 0.3, 1), visibility 800ms cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    #tactical-preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .preloader-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, transparent 20%, rgba(10, 10, 10, 0.8) 80%),
+                  linear-gradient(rgba(18, 18, 18, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+                  linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 100%, 100% 4px, 6px 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .preloader-content {
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .preloader-hud {
+      position: relative;
+      width: 100%;
+      padding: var(--space-8) var(--space-6);
+      background: rgba(17, 17, 17, 0.85);
+      border: 1px solid rgba(255, 179, 0, 0.15);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 179, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .hud-corner {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border: 2px solid var(--color-gold);
+    }
+    .hud-corner.top-left { top: 10px; left: 10px; border-right: none; border-bottom: none; }
+    .hud-corner.top-right { top: 10px; right: 10px; border-left: none; border-bottom: none; }
+    .hud-corner.bottom-left { bottom: 10px; left: 10px; border-right: none; border-top: none; }
+    .hud-corner.bottom-right { bottom: 10px; right: 10px; border-left: none; border-top: none; }
+
+    .preloader-video-wrapper {
+      width: 100%;
+      max-height: 250px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-bottom: var(--space-6);
+      border-bottom: 1px solid rgba(255, 179, 0, 0.1);
+      padding-bottom: var(--space-4);
+    }
+
+    #preloader-video {
+      width: 100%;
+      height: auto;
+      max-height: 220px;
+      object-fit: contain;
+      mix-blend-mode: lighten;
+    }
+
+    .preloader-status {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .status-tag {
+      font-size: var(--text-xs);
+      color: var(--color-gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-align: center;
+      display: block;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    .status-bar {
+      width: 100%;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 2px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .status-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--color-gold) 0%, #fff 100%);
+      box-shadow: 0 0 10px var(--color-gold);
+      transition: width 2.5s cubic-bezier(0.1, 0.8, 0.25, 1);
+    }
+
+    .status-text {
+      font-size: 9px;
+      color: var(--color-text-muted);
+      text-align: center;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
   </style>
 </head>
 <body>
+
+<!-- Tactical Preloader -->
+<div id="tactical-preloader">
+  <div class="preloader-overlay"></div>
+  <div class="preloader-content">
+    <div class="preloader-hud">
+      <div class="hud-corner top-left"></div>
+      <div class="hud-corner top-right"></div>
+      <div class="hud-corner bottom-left"></div>
+      <div class="hud-corner bottom-right"></div>
+      
+      <div class="preloader-video-wrapper">
+        <video id="preloader-video" autoplay muted playsinline>
+          <source src="RECURSOS/0622 (1).mp4" type="video/mp4">
+        </video>
+      </div>
+      
+      <div class="preloader-status">
+        <span class="status-tag">SISTEMA INICIADO</span>
+        <div class="status-bar">
+          <div class="status-bar-fill" id="preloaderBarFill"></div>
+        </div>
+        <div class="status-text" id="preloaderText">CONEXION SEGURA ESTABLECIDA - CONFIGURANDO ENTORNO TÁCTICO</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Skip link -->
 <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
@@ -2573,36 +3258,20 @@
     <nav class="navbar-inner" role="navigation" aria-label="Navegación principal">
 
       <!-- Logo -->
-      <a href="#hero" class="navbar-logo" aria-label="Armería VIP Technologies — Inicio">
-        <div class="navbar-logo-wrapper">
-          <div class="navbar-logo-image-container">
-            <img
-              src="logo.png"
-              alt="Armería VIP Technologies — Logo oficial"
-              class="navbar-logo-img"
-              width="46"
-              height="46"
-            >
-          </div>
-          <span class="navbar-logo-reticle"></span>
-        </div>
-        <div class="navbar-logo-text">
-          <span class="navbar-logo-name">ARMERÍA VIP</span>
-          <span class="navbar-logo-sub">Technologies</span>
-        </div>
+      <a href="#hero" class="navbar-logo-clean" aria-label="Armería VID — Inicio">
+        ARMERIA VID
       </a>
 
       <!-- Desktop links -->
       <ul class="navbar-links" role="list">
-        <li><a href="#services" class="navbar-link" aria-label="Ir a Servicios">Servicios</a></li>
-        <li><a href="#process" class="navbar-link" aria-label="Ir a Proceso">Proceso</a></li>
-        <li><a href="#compliance" class="navbar-link" aria-label="Ir a Marco Legal">Legal</a></li>
-        <li><a href="#contact" class="navbar-link" aria-label="Ir a Contacto">Contacto</a></li>
+        <li><a href="#services" class="navbar-link" aria-label="Ir a Servicios">MENÚ</a></li>
+        <li><a href="#about" class="navbar-link" aria-label="Ir a Sobre Nosotros">SOBRE NOSOTROS</a></li>
+        <li><a href="#contact" class="navbar-link" aria-label="Ir a Contacto">CONTACTO</a></li>
       </ul>
 
       <!-- CTA -->
       <div class="navbar-cta">
-        <a href="#contact" class="btn btn-ghost" aria-label="Agendar cita — ir a formulario de contacto">AGENDAR CITA</a>
+        <button class="btn btn-primary open-shop-btn" aria-label="Acceder a la Tienda">ACCEDER A LA TIENDA</button>
       </div>
 
       <!-- Hamburger -->
@@ -2621,235 +3290,93 @@
 <!-- Mobile menu -->
 <div class="nav-mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú de navegación móvil" aria-modal="true">
   <ul class="nav-mobile-links" role="list">
-    <li><a href="#services" class="nav-mobile-link">Servicios</a></li>
-    <li><a href="#process" class="nav-mobile-link">Proceso</a></li>
-    <li><a href="#compliance" class="nav-mobile-link">Marco Legal</a></li>
-    <li><a href="#why-us" class="nav-mobile-link">Por Qué Elegirnos</a></li>
-    <li><a href="#contact" class="nav-mobile-link">Contacto</a></li>
+    <li><a href="#services" class="nav-mobile-link">MENÚ</a></li>
+    <li><a href="#about" class="nav-mobile-link">SOBRE NOSOTROS</a></li>
+    <li><a href="#contact" class="nav-mobile-link">CONTACTO</a></li>
   </ul>
-  <a href="#contact" class="btn btn-primary" style="text-align:center;">AGENDAR CITA</a>
+  <button class="btn btn-primary open-shop-btn" style="text-align:center; width: 100%;">ACCEDER A LA TIENDA</button>
 </div>
 
 <!-- ============================================================
      HERO
 ============================================================ -->
 <main id="main-content">
-<section id="hero" aria-labelledby="hero-title">
-  <!-- Laser Scan Line -->
-  <div class="hero-scan-line" aria-hidden="true"></div>
-
-  <!-- High-tech HUD coordinate tags -->
-  <div class="hero-hud-tag hud-tag-top-left" aria-hidden="true">
-    <span>LAT: 6.2442° N</span>
-    <span>LNG: 75.5812° W</span>
-  </div>
-  <div class="hero-hud-tag hud-tag-bottom-left" aria-hidden="true">
-    <span>SYS: ACTIVE</span>
-    <span>TOL: ±0.001MM</span>
-  </div>
-  <div class="hero-hud-tag hud-tag-top-right" aria-hidden="true">
-    <span>MIL-STD: 810G</span>
-    <span>CLASS: 1A</span>
+<section id="hero" aria-label="Armería VID - Ingeniería de Precisión">
+  <!-- Background Video (Engranajes) -->
+  <div class="hero-video-bg">
+    <video autoplay loop muted playsinline>
+      <source src="RECURSOS/video_202606221112.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
   </div>
 
-  <div class="container">
-    <div class="hero-inner">
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
 
-      <!-- Left: Content -->
-      <div class="hero-content">
-        <div class="hero-badge" role="note">
-          <span class="hero-badge-icon">⬡</span>
-          Ingeniería de Precisión
-        </div>
+  <!-- Giant Background Text -->
+  <div class="hero-bg-text-container" aria-hidden="true">
+    <div class="hero-bg-text-row text-row-left">ARMERIA VID</div>
+    <div class="hero-bg-text-row text-row-right">ARMERIA VID</div>
+  </div>
 
-        <h1 class="hero-title" id="hero-title">
-          Maximizamos<br>
-          la <span class="hero-title-accent">Fiabilidad</span><br>
-          de tus Activos
-        </h1>
-
-        <p class="hero-subtitle">
-          Diagnóstico avanzado, mantenimiento preventivo y restauración premium de elementos de seguridad.
-          Operamos bajo cumplimiento normativo absoluto en Medellín, Colombia.
-        </p>
-
-        <!-- Stats -->
-        <div class="hero-stats" aria-label="Indicadores clave">
-          <div class="hero-stat">
-            <span class="hero-stat-value counter-value" data-target="0" data-suffix="">0</span>
-            <span class="hero-stat-label">Venta de armas</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-value counter-value" data-target="100" data-suffix="%">0%</span>
-            <span class="hero-stat-label">Trazabilidad</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat-value">±0.001</span>
-            <span class="hero-stat-label">Tolerancia (mm)</span>
-          </div>
-        </div>
-
-        <!-- CTAs -->
-        <div class="hero-ctas">
-          <a href="#contact" class="btn btn-primary btn-hero" aria-label="Agendar diagnóstico técnico — ir al formulario">
-            AGENDAR DIAGNÓSTICO TÉCNICO
-          </a>
-          <a href="#services" class="btn btn-outline" aria-label="Ver todos los servicios">VER SERVICIOS</a>
-        </div>
-
-        <!-- Trust badges -->
-        <div class="hero-trust" role="list" aria-label="Certificaciones y garantías">
-          <div class="hero-trust-item" role="listitem">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              <path d="M9 12l2 2 4-4"/>
-            </svg>
-            Operación Certificada
-          </div>
-          <div class="hero-trust-item" role="listitem">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-            </svg>
-            Custodia Blindada
-          </div>
-          <div class="hero-trust-item" role="listitem">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-            Trazabilidad Total
-          </div>
-        </div>
+  <!-- Center Content: Floating 3D Weapon with Hotspots -->
+  <div class="hero-center-wrapper">
+    <!-- Left Column: Title & Info -->
+    <div class="hero-left-content">
+      <span class="hero-badge">DIAGNÓSTICO & RESTAURACIÓN</span>
+      <h1 class="hero-main-title">
+        Ingeniería de <br><span class="accent">Precisión</span> para <br>tus Activos.
+      </h1>
+      <p class="hero-main-desc">
+        Mantenimiento preventivo, limpieza ultrasónica y calibración micrométrica de grado militar bajo protocolos de trazabilidad blindada.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#services" class="btn btn-primary" aria-label="Ver nuestros servicios especializados">VER SERVICIOS</a>
+        <a href="#contact" class="btn btn-outline" style="border: 1px solid rgba(255, 255, 255, 0.15);" aria-label="Agendar una cita de diagnóstico técnico">AGENDAR CITA</a>
       </div>
-
-      <!-- Right: Visual -->
-      <div class="hero-visual" aria-label="Diagrama técnico de reticle de precisión">
-        <svg class="reticle-svg" viewBox="0 0 480 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mira de precisión micrométrica — símbolo de ingeniería técnica">
-          <title>Mira de precisión micrométrica</title>
-          <defs>
-            <clipPath id="hero-logo-clip">
-              <circle cx="240" cy="240" r="50" />
-            </clipPath>
-          </defs>
-
-          <!-- Background circle -->
-          <circle cx="240" cy="240" r="235" fill="rgba(201,162,39,0.03)" stroke="rgba(201,162,39,0.1)" stroke-width="0.5"/>
-
-          <!-- Outer ring with graduations (animates) -->
-          <g class="reticle-outer-ring">
-            <circle cx="240" cy="240" r="218" stroke="rgba(201,162,39,0.4)" stroke-width="0.8"/>
-            <!-- Major ticks every 30 degrees -->
-            <g stroke="rgba(201,162,39,0.7)" stroke-width="1.5">
-              <line x1="240" y1="22" x2="240" y2="38"/>
-              <line x1="350" y1="53.4" x2="341.5" y2="67.2"/>
-              <line x1="422" y1="150" x2="408.5" y2="157.8"/>
-              <line x1="458" y1="240" x2="442" y2="240"/>
-              <line x1="422" y1="330" x2="408.5" y2="322.2"/>
-              <line x1="350" y1="426.6" x2="341.5" y2="412.8"/>
-              <line x1="240" y1="458" x2="240" y2="442"/>
-              <line x1="130" y1="426.6" x2="138.5" y2="412.8"/>
-              <line x1="58" y1="330" x2="71.5" y2="322.2"/>
-              <line x1="22" y1="240" x2="38" y2="240"/>
-              <line x1="58" y1="150" x2="71.5" y2="157.8"/>
-              <line x1="130" y1="53.4" x2="138.5" y2="67.2"/>
-            </g>
-            <!-- Minor ticks every 10 degrees -->
-            <g stroke="rgba(201,162,39,0.3)" stroke-width="0.8">
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(10 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(20 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(40 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(50 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(70 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(80 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(100 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(110 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(130 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(140 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(160 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(170 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(190 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(200 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(220 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(230 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(250 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(260 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(280 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(290 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(310 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(320 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(340 240 240)"/>
-              <line x1="240" y1="22" x2="240" y2="30" transform="rotate(350 240 240)"/>
-            </g>
-            <!-- Degree numbers -->
-            <text x="240" y="15" text-anchor="middle" fill="rgba(201,162,39,0.5)" font-family="'JetBrains Mono', monospace" font-size="8">0°</text>
-            <text x="461" y="244" text-anchor="middle" fill="rgba(201,162,39,0.5)" font-family="'JetBrains Mono', monospace" font-size="8">90°</text>
-            <text x="240" y="467" text-anchor="middle" fill="rgba(201,162,39,0.5)" font-family="'JetBrains Mono', monospace" font-size="8">180°</text>
-            <text x="15" y="244" text-anchor="middle" fill="rgba(201,162,39,0.5)" font-family="'JetBrains Mono', monospace" font-size="8">270°</text>
-          </g>
-
-          <!-- Middle rings -->
-          <circle cx="240" cy="240" r="180" stroke="rgba(201,162,39,0.15)" stroke-width="0.5" stroke-dasharray="4 3"/>
-          <circle cx="240" cy="240" r="140" stroke="rgba(201,162,39,0.2)" stroke-width="0.5"/>
-          <circle cx="240" cy="240" r="100" stroke="rgba(201,162,39,0.25)" stroke-width="0.5" stroke-dasharray="2 2"/>
-          <circle cx="240" cy="240" r="60" stroke="rgba(201,162,39,0.3)" stroke-width="0.7"/>
-
-          <!-- Crosshair lines -->
-          <line x1="0" y1="240" x2="215" y2="240" stroke="rgba(201,162,39,0.5)" stroke-width="0.8"/>
-          <line x1="265" y1="240" x2="480" y2="240" stroke="rgba(201,162,39,0.5)" stroke-width="0.8"/>
-          <line x1="240" y1="0" x2="240" y2="215" stroke="rgba(201,162,39,0.5)" stroke-width="0.8"/>
-          <line x1="240" y1="265" x2="240" y2="480" stroke="rgba(201,162,39,0.5)" stroke-width="0.8"/>
-
-          <!-- Scale markings on crosshair -->
-          <g stroke="rgba(201,162,39,0.4)" stroke-width="0.6">
-            <line x1="160" y1="236" x2="160" y2="244"/>
-            <line x1="180" y1="237" x2="180" y2="243"/>
-            <line x1="200" y1="237" x2="200" y2="243"/>
-            <line x1="300" y1="236" x2="300" y2="244"/>
-            <line x1="280" y1="237" x2="280" y2="243"/>
-            <line x1="260" y1="237" x2="260" y2="243"/>
-            <line x1="236" y1="160" x2="244" y2="160"/>
-            <line x1="237" y1="180" x2="243" y2="180"/>
-            <line x1="237" y1="200" x2="243" y2="200"/>
-            <line x1="236" y1="300" x2="244" y2="300"/>
-            <line x1="237" y1="280" x2="243" y2="280"/>
-            <line x1="237" y1="260" x2="243" y2="260"/>
-          </g>
-
-          <!-- Center circle & logo -->
-          <g class="reticle-center-logo">
-            <!-- Glowing backdrop -->
-            <circle cx="240" cy="240" r="54" fill="rgba(10,10,12,0.92)" stroke="var(--color-gold)" stroke-width="1.8"/>
-            <circle cx="240" cy="240" r="60" stroke="rgba(201,162,39,0.3)" stroke-width="0.8" stroke-dasharray="3 3"/>
-            <!-- Clipped logo image centered and scaled up to crop white margins -->
-            <image href="logo.png" x="170" y="170" width="140" height="140" preserveAspectRatio="xMidYMid slice" clip-path="url(#hero-logo-clip)"/>
-            <!-- Concentric crosshair ring overlay inside the logo -->
-            <circle cx="240" cy="240" r="50" stroke="rgba(201,162,39,0.4)" stroke-width="0.8" fill="none"/>
-          </g>
-
-          <!-- Floating technical labels -->
-          <text x="315" y="175" fill="rgba(201,162,39,0.6)" font-family="'JetBrains Mono', monospace" font-size="8.5">±0.001mm</text>
-          <text x="140" y="305" fill="rgba(201,162,39,0.5)" font-family="'JetBrains Mono', monospace" font-size="8">SPEC: MIL-STD</text>
-          <text x="300" y="310" fill="rgba(201,162,39,0.4)" font-family="'JetBrains Mono', monospace" font-size="7.5">REF: VIP-2024</text>
-          <text x="130" y="182" fill="rgba(201,162,39,0.4)" font-family="'JetBrains Mono', monospace" font-size="7.5">CLASS A</text>
-          <text x="322" y="252" fill="rgba(201,162,39,0.35)" font-family="'JetBrains Mono', monospace" font-size="7">TOL: 0.5μm</text>
-
-          <!-- Reference lines -->
-          <line x1="308" y1="172" x2="295" y2="195" stroke="rgba(201,162,39,0.3)" stroke-width="0.6"/>
-          <line x1="148" y1="299" x2="170" y2="265" stroke="rgba(201,162,39,0.3)" stroke-width="0.6"/>
-
-          <!-- Corner marks -->
-          <path d="M40 40 L40 60 L60 60" stroke="rgba(201,162,39,0.25)" stroke-width="0.8" fill="none"/>
-          <path d="M440 40 L440 60 L420 60" stroke="rgba(201,162,39,0.25)" stroke-width="0.8" fill="none"/>
-          <path d="M40 440 L40 420 L60 420" stroke="rgba(201,162,39,0.25)" stroke-width="0.8" fill="none"/>
-          <path d="M440 440 L440 420 L420 420" stroke="rgba(201,162,39,0.25)" stroke-width="0.8" fill="none"/>
-        </svg>
-      </div>
-
     </div>
+
+    <!-- Right Column: Visor 3D Glock 17 -->
+    <div class="weapon-3d-container">
+      <div class="weapon-3d-wrapper" id="weapon3dWrapper">
+        <video autoplay loop muted playsinline class="weapon-3d-video">
+          <source src="RECURSOS/Glock_17_disassembled_in_studio_202606221128.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Hotspots -->
+        <button class="hotspot" id="hotspot-canon" style="top: 35%; left: 45%;" data-tooltip="canon" aria-label="Detalle del Cañón">
+          <span class="hotspot-dot"></span>
+          <span class="hotspot-pulse"></span>
+        </button>
+        <button class="hotspot" id="hotspot-corredera" style="top: 25%; left: 52%;" data-tooltip="corredera" aria-label="Detalle de la Corredera">
+          <span class="hotspot-dot"></span>
+          <span class="hotspot-pulse"></span>
+        </button>
+        <button class="hotspot" id="hotspot-gatillo" style="top: 55%; left: 51%;" data-tooltip="gatillo" aria-label="Detalle del Gatillo">
+          <span class="hotspot-dot"></span>
+          <span class="hotspot-pulse"></span>
+        </button>
+
+        <!-- Tooltip Cards -->
+        <div class="hotspot-tooltip-card tooltip-canon" id="tooltip-canon" role="tooltip">
+          <h4 class="tooltip-title">Mantenimiento del Cañón</h4>
+          <p class="tooltip-desc">Limpieza por ultrasonidos y eliminación de residuos de cobre para garantizar la máxima precisión en cada disparo.</p>
+        </div>
+        <div class="hotspot-tooltip-card tooltip-corredera" id="tooltip-corredera" role="tooltip">
+          <h4 class="tooltip-title">Ajuste de Corredera y Cerrojo</h4>
+          <p class="tooltip-desc">Rectificado de tolerancias y lubricación hidrofóbica para un ciclo de disparo suave y uniforme.</p>
+        </div>
+        <div class="hotspot-tooltip-card tooltip-gatillo" id="tooltip-gatillo" role="tooltip">
+          <h4 class="tooltip-title">Calibración del Grupo de Disparo</h4>
+          <p class="tooltip-desc">Ajuste del peso del gatillo y pulido de superficies de contacto para un escape nítido y predecible.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Phrase -->
+  <div class="hero-footer-phrase">
+    Precisión <span class="accent">garantizada</span>, seguridad <span class="accent">absoluta</span>: El arte del mantenimiento táctico.
   </div>
 </section>
 
@@ -2904,7 +3431,7 @@
 
         <div class="about-text">
           <p class="reveal reveal-delay-1">
-            En Armería VIP Technologies entendemos que un activo de seguridad no operativo no es simplemente
+            En Armería VID Technologies entendemos que un activo de seguridad no operativo no es simplemente
             un inconveniente — es una vulnerabilidad crítica. Por eso, nuestra misión es mantenerte operativo
             con la más alta ingeniería disponible.
           </p>
@@ -2920,57 +3447,88 @@
         </div>
       </div>
 
-      <!-- Right: Values grid -->
-      <div class="values-grid">
-        <div class="value-card reveal reveal-delay-1">
-          <svg class="value-card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <rect x="4" y="18" width="32" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/>
-            <rect x="14" y="8" width="12" height="24" rx="1" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="20" y1="4" x2="20" y2="8" stroke="currentColor" stroke-width="1.5"/>
-            <line x1="20" y1="32" x2="20" y2="36" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="20" cy="20" r="2.5" fill="currentColor"/>
-          </svg>
-          <h3 class="value-card-title">Precisión Micrométrica</h3>
-          <p class="value-card-desc">Tolerancias de ±0.001mm con instrumentación de grado aeronáutico.</p>
-        </div>
-
-        <div class="value-card reveal reveal-delay-2">
-          <svg class="value-card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M20 4 L34 10 V22 C34 30 27 36 20 38 C13 36 6 30 6 22 V10 Z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M14 20 L18 24 L26 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-          <h3 class="value-card-title">Cumplimiento Total</h3>
-          <p class="value-card-desc">Operación 100% alineada con el marco normativo colombiano.</p>
-        </div>
-
-        <div class="value-card reveal reveal-delay-3">
-          <svg class="value-card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <path d="M8 14 L14 8 L20 14 L26 8 L32 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M8 24 L14 18 L20 24 L26 18 L32 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            <path d="M8 34 L32 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <h3 class="value-card-title">Trazabilidad Blindada</h3>
-          <p class="value-card-desc">Registro documental completo de cada componente — ingreso, proceso, egreso.</p>
-        </div>
-
-        <div class="value-card reveal reveal-delay-4">
-          <svg class="value-card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-            <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/>
-            <circle cx="20" cy="7" r="3" stroke="currentColor" stroke-width="1.2"/>
-            <circle cx="20" cy="33" r="3" stroke="currentColor" stroke-width="1.2"/>
-            <circle cx="7" cy="20" r="3" stroke="currentColor" stroke-width="1.2"/>
-            <circle cx="33" cy="20" r="3" stroke="currentColor" stroke-width="1.2"/>
-            <line x1="20" y1="10" x2="20" y2="14" stroke="currentColor" stroke-width="1"/>
-            <line x1="20" y1="26" x2="20" y2="30" stroke="currentColor" stroke-width="1"/>
-            <line x1="10" y1="20" x2="14" y2="20" stroke="currentColor" stroke-width="1"/>
-            <line x1="26" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="1"/>
-          </svg>
-          <h3 class="value-card-title">Tecnología Avanzada</h3>
-          <p class="value-card-desc">Limpieza ultrasónica, análisis de fatiga digital y software especializado.</p>
+      <!-- Right: Video Corporativo Taller -->
+      <div class="about-video-side reveal reveal-delay-2">
+        <div class="about-video-wrapper">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner top-right"></div>
+          <div class="hud-corner bottom-left"></div>
+          <div class="hud-corner bottom-right"></div>
+          
+          <video id="about-corporate-video" loop muted autoplay playsinline>
+            <source src="RECURSOS/0622 (1)(5).mp4" type="video/mp4">
+          </video>
+          
+          <div class="about-video-overlay">
+            <span class="video-status-indicator"><span class="pulse-dot"></span> EN VIVO: CÁMARA TALLER</span>
+            <div class="about-video-title">LABORATORIO DE PRECISIÓN VID</div>
+            <div class="about-video-controls">
+              <button class="video-control-btn" id="btn-about-play" aria-label="Pausar video">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="svg-play-icon"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+              </button>
+              <button class="video-control-btn" id="btn-about-mute" aria-label="Activar sonido">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="svg-mute-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+              </button>
+              <button class="video-control-btn" id="btn-about-fs" aria-label="Pantalla completa">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
     </div>
+
+    <!-- Bottom: Values grid horizontally -->
+    <div class="values-horizontal-grid">
+      <div class="value-card reveal reveal-delay-1">
+        <svg class="value-card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect x="4" y="18" width="32" height="4" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <rect x="14" y="8" width="12" height="24" rx="1" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="20" y1="4" x2="20" y2="8" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="20" y1="32" x2="20" y2="36" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="20" cy="20" r="2.5" fill="currentColor"/>
+        </svg>
+        <h3 class="value-card-title">Precisión Micrométrica</h3>
+        <p class="value-card-desc">Tolerancias de ±0.001mm con instrumentación de grado aeronáutico.</p>
+      </div>
+
+      <div class="value-card reveal reveal-delay-2">
+        <svg class="value-card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 4 L34 10 V22 C34 30 27 36 20 38 C13 36 6 30 6 22 V10 Z" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 20 L18 24 L26 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h3 class="value-card-title">Cumplimiento Total</h3>
+        <p class="value-card-desc">Operación 100% alineada con el marco normativo colombiano.</p>
+      </div>
+
+      <div class="value-card reveal reveal-delay-3">
+        <svg class="value-card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M8 14 L14 8 L20 14 L26 8 L32 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8 24 L14 18 L20 24 L26 18 L32 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8 34 L32 34" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <h3 class="value-card-title">Trazabilidad Blindada</h3>
+        <p class="value-card-desc">Registro documental completo de cada componente — ingreso, proceso, egreso.</p>
+      </div>
+
+      <div class="value-card reveal reveal-delay-4">
+        <svg class="value-card-icon" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="20" cy="7" r="3" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="20" cy="33" r="3" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="7" cy="20" r="3" stroke="currentColor" stroke-width="1.2"/>
+          <circle cx="33" cy="20" r="3" stroke="currentColor" stroke-width="1.2"/>
+          <line x1="20" y1="10" x2="20" y2="14" stroke="currentColor" stroke-width="1"/>
+          <line x1="20" y1="26" x2="20" y2="30" stroke="currentColor" stroke-width="1"/>
+          <line x1="10" y1="20" x2="14" y2="20" stroke="currentColor" stroke-width="1"/>
+          <line x1="26" y1="20" x2="30" y2="20" stroke="currentColor" stroke-width="1"/>
+        </svg>
+        <h3 class="value-card-title">Tecnología Avanzada</h3>
+        <p class="value-card-desc">Limpieza ultrasónica, análisis de fatiga digital y software especializado.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -3099,6 +3657,100 @@
       </article>
 
     </div>
+
+    <!-- Panel Interactivo de Despiece Técnico (Subsección de Servicios) -->
+    <div class="technical-blueprint-panel reveal">
+      <div class="blueprint-grid">
+        
+        <!-- Left: HUD Blueprint Video Container -->
+        <div class="blueprint-video-side">
+          <div class="blueprint-video-wrapper">
+            <!-- HUD Elements -->
+            <div class="hud-frame">
+              <div class="hud-line-scanner"></div>
+              <div class="hud-target-reticle">
+                <div class="reticle-ring"></div>
+                <div class="reticle-line reticle-line-h"></div>
+                <div class="reticle-line reticle-line-v"></div>
+              </div>
+              <div class="hud-tech-data font-mono">
+                <div class="tech-row"><span class="tech-label">SYS:</span> <span class="tech-value text-green">OPERATIVO</span></div>
+                <div class="tech-row"><span class="tech-label">RES:</span> <span class="tech-value">±0.001mm</span></div>
+                <div class="tech-row"><span class="tech-label">TOL:</span> <span class="tech-value">TÁCTICA</span></div>
+                <div class="tech-row"><span class="tech-label">VAL:</span> <span class="tech-value text-gold" id="hudDynamicVal">98.4%</span></div>
+              </div>
+              
+              <div class="hud-corner top-left"></div>
+              <div class="hud-corner top-right"></div>
+              <div class="hud-corner bottom-left"></div>
+              <div class="hud-corner bottom-right"></div>
+            </div>
+            
+            <video id="blueprint-technical-video" loop muted autoplay playsinline>
+              <source src="RECURSOS/0622 (1)(4).mp4" type="video/mp4">
+            </video>
+            
+            <div class="blueprint-video-overlay">
+              <div class="blueprint-tag">VISTA DE DIAGNÓSTICO ESTRUCTURAL 3D</div>
+              <div class="blueprint-video-controls">
+                <button class="video-control-btn" id="btn-blueprint-play" aria-label="Pausar video">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="svg-blueprint-play-icon"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                </button>
+                <button class="video-control-btn" id="btn-blueprint-mute" aria-label="Activar sonido">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="svg-blueprint-mute-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M23 9l-6 6M17 9l6 6"/></svg>
+                </button>
+                <button class="video-control-btn" id="btn-blueprint-fs" aria-label="Pantalla completa">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Text & Interactions -->
+        <div class="blueprint-info-side">
+          <span class="blueprint-info-badge">LABORATORIO TECNOLÓGICO</span>
+          <h3 class="blueprint-info-title">Ingeniería Forense y Tolerancia Cero</h3>
+          <p class="blueprint-info-desc">
+            Cada mantenimiento de alto nivel requiere una comprensión absoluta de la física del componente. 
+            Utilizamos planos digitales y despieces de grado industrial para mapear y evaluar desgastes mecánicos invisibles al ojo humano.
+          </p>
+          
+          <div class="blueprint-stats-grid">
+            <div class="blueprint-stat-card">
+              <span class="stat-num text-gold">100%</span>
+              <span class="stat-lbl">Trazabilidad en Despiece</span>
+            </div>
+            <div class="blueprint-stat-card">
+              <span class="stat-num text-gold">±0.001</span>
+              <span class="stat-lbl">Calibración Micrométrica</span>
+            </div>
+          </div>
+
+          <div class="blueprint-interactive-features">
+            <h4 class="features-title">Protocolos de Medición Activos</h4>
+            <ul class="features-list">
+              <li class="feature-item">
+                <span class="feature-bullet">⬡</span>
+                <div>
+                  <strong>Metrología Láser 3D:</strong>
+                  <span>Escaneo estructural de recámaras y correderas para detectar micro-fracturas por fatiga de metales.</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <span class="feature-bullet">⬡</span>
+                <div>
+                  <strong>Diagnóstico de Presión de Cierre:</strong>
+                  <span>Verificación micrométrica del headspace para asegurar el correcto acople de los sistemas de cierre.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -3133,7 +3785,7 @@
               <line x1="8" y1="14" x2="16" y2="14"/>
             </svg>
             <h3 class="process-step-title">Solicitud y Verificación</h3>
-            <p class="process-step-desc">Agendas tu cita por WhatsApp VIP o correo. Verificamos documentación y establecemos protocolo de ingreso seguro.</p>
+            <p class="process-step-desc">Agendas tu cita por WhatsApp o correo. Verificamos documentación y establecemos protocolo de ingreso seguro.</p>
           </div>
         </div>
 
@@ -3289,7 +3941,7 @@
             <text x="160" y="90" text-anchor="middle" fill="rgba(201,162,39,0.5)" font-family="'Barlow Condensed', sans-serif" font-size="9" letter-spacing="3" font-weight="600">MARCO NORMATIVO COLOMBIA</text>
             <line x1="60" y1="100" x2="260" y2="100" stroke="rgba(201,162,39,0.2)" stroke-width="0.5"/>
             <text x="160" y="115" text-anchor="middle" fill="rgba(201,162,39,0.35)" font-family="'JetBrains Mono', monospace" font-size="7.5">OPERACIÓN AUTORIZADA · TRAZABILIDAD TOTAL</text>
-            <text x="160" y="130" text-anchor="middle" fill="rgba(201,162,39,0.25)" font-family="'JetBrains Mono', monospace" font-size="7">Armería VIP Technologies · Medellín, Colombia</text>
+            <text x="160" y="130" text-anchor="middle" fill="rgba(201,162,39,0.25)" font-family="'JetBrains Mono', monospace" font-size="7">Armería VID Technologies · Medellín, Colombia</text>
           </svg>
         </div>
       </div>
@@ -3305,7 +3957,7 @@
   <div class="container">
     <div class="why-header reveal">
       <p class="section-label">Por Qué Elegirnos</p>
-      <h2 class="section-title" id="whyus-title">La Diferencia VIP</h2>
+      <h2 class="section-title" id="whyus-title">La Diferencia VID</h2>
       <p class="section-subtitle" style="margin: var(--space-4) auto 0; text-align:center;">No somos el taller más cercano. Somos el estándar más alto.</p>
     </div>
 
@@ -3593,7 +4245,7 @@
             </svg>
             <h3 class="form-success-title">¡Solicitud Recibida!</h3>
             <p class="form-success-text">
-              Hemos recibido su solicitud de diagnóstico técnico. Un especialista de Armería VIP Technologies
+              Hemos recibido su solicitud de diagnóstico técnico. Un especialista de Armería VID Technologies
               se pondrá en contacto con usted en menos de 24 horas hábiles para confirmar los detalles de su cita.
             </p>
           </div>
@@ -3609,13 +4261,13 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.71 12 19.79 19.79 0 0 1 1.65 3.26 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/>
             </svg>
-            WhatsApp VIP
+            WhatsApp VID
           </div>
           <p class="contact-item-value">Línea directa de soporte técnico</p>
           <p class="contact-item-note" style="margin-bottom: var(--space-3);">Respuesta garantizada en horario hábil</p>
-          <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20deseo%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20en%20Armer%C3%ADa%20VIP%20Technologies"
+          <a href="https://wa.me/57XXXXXXXXXX?text=Hola%2C%20deseo%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20en%20Armer%C3%ADa%20VID%20Technologies"
              class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer"
-             aria-label="Escribir al WhatsApp de Armería VIP Technologies"
+             aria-label="Escribir al WhatsApp de Armería VID Technologies"
              title="Se abrirá WhatsApp en una nueva ventana">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
@@ -3645,9 +4297,9 @@
             </svg>
             Correo Institucional
           </div>
-          <p class="contact-item-value">contacto@armeriavip.com</p>
-          <a href="mailto:contacto@armeriavip.com" class="btn btn-outline" style="margin-top:var(--space-3);font-size:var(--text-xs);"
-             aria-label="Enviar correo electrónico a Armería VIP Technologies">
+          <p class="contact-item-value">contacto@armeriavid.com</p>
+          <a href="mailto:contacto@armeriavid.com" class="btn btn-outline" style="margin-top:var(--space-3);font-size:var(--text-xs);"
+             aria-label="Enviar correo electrónico a Armería VID Technologies">
             Enviar correo
           </a>
         </div>
@@ -3738,20 +4390,8 @@
       <!-- Brand -->
       <div>
         <div class="footer-brand-logo">
-          <div class="footer-logo-wrapper">
-            <div class="footer-logo-image-container">
-              <img
-                src="logo.png"
-                alt="Armería VIP Technologies — Logo oficial"
-                class="footer-logo-img"
-                width="64"
-                height="64"
-              >
-            </div>
-            <span class="footer-logo-reticle"></span>
-          </div>
           <div>
-            <div style="font-family:var(--font-display);font-weight:600;font-size:1rem;color:var(--color-gold);">ARMERÍA VIP</div>
+            <div style="font-family:'Bebas Neue', sans-serif;font-weight:400;font-size:1.6rem;color:var(--color-text-primary);letter-spacing:0.05em;text-transform:uppercase;">ARMERIA VID</div>
             <div style="font-family:var(--font-ui);font-size:0.6rem;letter-spacing:0.3em;color:var(--color-text-muted);text-transform:uppercase;">Technologies</div>
           </div>
         </div>
@@ -3790,14 +4430,14 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.71 12 19.79 19.79 0 0 1 1.65 3.26 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
           </svg>
-          WhatsApp VIP — Cita Previa
+          WhatsApp VID — Cita Previa
         </div>
         <div class="footer-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
             <polyline points="22,6 12,13 2,6"/>
           </svg>
-          contacto@armeriavip.com
+          contacto@armeriavid.com
         </div>
         <div class="footer-contact-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
@@ -3816,7 +4456,7 @@
   <div style="background: rgba(201,162,39,0.04); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: var(--space-4) 0;">
     <div class="container">
       <p class="footer-disclaimer-text" style="text-align:center;">
-        ⚠️ <strong>ARMERÍA VIP TECHNOLOGIES NO COMERCIALIZA ARMAS DE FUEGO, MUNICIONES NI DISPOSITIVOS TRAUMÁTICOS.</strong><br>
+        ⚠️ <strong>ARMERÍA VID TECHNOLOGIES NO COMERCIALIZA ARMAS DE FUEGO, MUNICIONES NI DISPOSITIVOS TRAUMÁTICOS.</strong><br>
         Nuestros servicios se limitan exclusivamente a diagnóstico, mantenimiento, reparación y restauración técnica.
       </p>
     </div>
@@ -3825,11 +4465,73 @@
   <!-- Bottom -->
   <div class="container">
     <div class="footer-bottom">
-      <p class="footer-copyright">© 2024 Armería VIP Technologies. Todos los derechos reservados.</p>
+      <p class="footer-copyright">© 2024 Armería VID Technologies. Todos los derechos reservados.</p>
       <p class="footer-copyright">Medellín, Antioquia, Colombia</p>
     </div>
   </div>
 </footer>
+
+<!-- ============================================================
+     SHOP MODAL (TIENDA TÁCTICA VIP)
+============================================================ -->
+<div id="shopModal" class="shop-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="shopModalTitle">
+  <div class="shop-modal-container">
+    <button class="shop-modal-close" id="closeShopBtn" aria-label="Cerrar tienda">&times;</button>
+    
+    <div class="shop-modal-header">
+      <h3 id="shopModalTitle" class="shop-modal-title">Tienda Oficial Armería VID</h3>
+      <p class="shop-modal-subtitle">Instrumentación táctica, repuestos y lubricación premium. Pedidos procesados vía WhatsApp de forma inmediata.</p>
+    </div>
+    
+    <div class="shop-products-grid">
+      <!-- Product 1 -->
+      <div class="shop-product-card">
+        <div class="product-badge">Premium</div>
+        <div class="product-img-placeholder">
+          <span>ARME</span>
+        </div>
+        <h4 class="product-title">Aceite Multiuso Premium ARME</h4>
+        <p class="product-desc">Lubricante hidrofóbico avanzado de alta viscosidad y larga duración para mecanismos de precisión.</p>
+        <div class="product-footer">
+          <span class="product-price">$45.000 COP</span>
+          <a href="https://wa.me/573000000000?text=Hola%2C%20deseo%20comprar%20el%20Aceite%20Multiuso%20Premium%20ARME%20en%20Armer%C3%ADa%20VID" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn">COMPRAR</a>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="shop-product-card">
+        <div class="product-badge">Táctico</div>
+        <div class="product-img-placeholder">
+          <span>KIT</span>
+        </div>
+        <h4 class="product-title">Kit de Limpieza Ultrasónica</h4>
+        <p class="product-desc">Solución de grado industrial y cepillos micrométricos para la eliminación completa de residuos de carbón y cobre.</p>
+        <div class="product-footer">
+          <span class="product-price">$180.000 COP</span>
+          <a href="https://wa.me/573000000000?text=Hola%2C%20deseo%20comprar%20el%20Kit%20de%20Limpieza%20Ultras%C3%B3nica%20en%20Armer%C3%ADa%20VID" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn">COMPRAR</a>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="shop-product-card">
+        <div class="product-badge">Repuesto</div>
+        <div class="product-img-placeholder">
+          <span>GLOCK</span>
+        </div>
+        <h4 class="product-title">Resorte de Recuperación Glock 17</h4>
+        <p class="product-desc">Resorte de recuperación oficial de 17 lbs para optimizar el ciclo de disparo y reducir el retroceso.</p>
+        <div class="product-footer">
+          <span class="product-price">$95.000 COP</span>
+          <a href="https://wa.me/573000000000?text=Hola%2C%20deseo%20comprar%20el%20Resorte%20de%20Recuperaci%C3%B3n%20Glock%2017%20en%20Armer%C3%ADa%20VID" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn">COMPRAR</a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="shop-modal-footer">
+      <p>🛡️ Envío blindado y trazabilidad total garantizada a toda Colombia.</p>
+    </div>
+  </div>
+</div>
 
 <!-- ============================================================
      JAVASCRIPT
@@ -3859,9 +4561,207 @@
       requestAnimationFrame(animateCursor);
     })();
 
-    document.querySelectorAll('a, button, .service-card, .value-card, .benefit-card, .client-type-card').forEach(el => {
+    document.querySelectorAll('a, button, .service-card, .value-card, .benefit-card, .client-type-card, .hotspot, .open-shop-btn, .product-buy-btn').forEach(el => {
       el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
       el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+  }
+
+  /* ----------------------------------------------------------
+     PARTICLES CANVAS (GOLD SPARKS)
+  ---------------------------------------------------------- */
+  const canvas = document.getElementById('particleCanvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = canvas.offsetWidth;
+    let h = canvas.height = canvas.offsetHeight;
+
+    window.addEventListener('resize', () => {
+      w = canvas.width = canvas.offsetWidth;
+      h = canvas.height = canvas.offsetHeight;
+    });
+
+    const particles = [];
+    const maxParticles = 50;
+    let mouse = { x: -1000, y: -1000, active: false };
+
+    class Spark {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * h;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = -(Math.random() * 0.6 + 0.2); // upward movement
+        this.size = Math.random() * 1.8 + 0.4;
+        this.alpha = Math.random() * 0.6 + 0.1;
+        this.decay = Math.random() * 0.0018 + 0.0008;
+        this.color = Math.random() > 0.5 ? '#FFB300' : '#E8C84A';
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= this.decay;
+
+        if (mouse.active) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 150) {
+            const force = (150 - dist) / 150;
+            this.vx += (dx / dist) * force * 0.02;
+            this.vy += (dy / dist) * force * 0.02;
+          }
+        }
+
+        if (this.alpha <= 0 || this.y < 0 || this.x < 0 || this.x > w) {
+          this.reset();
+          this.y = h + 10;
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = this.color;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    for (let i = 0; i < maxParticles; i++) {
+      particles.push(new Spark());
+    }
+
+    const hero = document.getElementById('hero');
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      mouse.active = false;
+    });
+
+    (function loop() {
+      ctx.clearRect(0, 0, w, h);
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  /* ----------------------------------------------------------
+     3D WEAPON PARALLAX TILT
+  ---------------------------------------------------------- */
+  const heroSection = document.getElementById('hero');
+  const weaponWrapper = document.getElementById('weapon3dWrapper');
+  if (heroSection && weaponWrapper) {
+    heroSection.addEventListener('mousemove', (e) => {
+      const rect = heroSection.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const normX = x / (rect.width / 2);
+      const normY = y / (rect.height / 2);
+      
+      const rotateY = normX * 15; // max 15 degrees
+      const rotateX = -normY * 15; // max 15 degrees
+      
+      weaponWrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    
+    heroSection.addEventListener('mouseleave', () => {
+      weaponWrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
+      weaponWrapper.style.transition = 'transform 0.5s ease';
+    });
+
+    heroSection.addEventListener('mouseenter', () => {
+      weaponWrapper.style.transition = 'none';
+    });
+  }
+
+  /* ----------------------------------------------------------
+     HOTSPOTS INTERACTION
+  ---------------------------------------------------------- */
+  const hotspots = document.querySelectorAll('.hotspot');
+  const tooltipCards = document.querySelectorAll('.hotspot-tooltip-card');
+
+  hotspots.forEach(hotspot => {
+    const tooltipId = 'tooltip-' + hotspot.dataset.tooltip;
+    const tooltipCard = document.getElementById(tooltipId);
+
+    function showTooltip() {
+      tooltipCards.forEach(card => card.classList.remove('is-visible'));
+      if (tooltipCard) tooltipCard.classList.add('is-visible');
+    }
+
+    function hideTooltip() {
+      if (tooltipCard) tooltipCard.classList.remove('is-visible');
+    }
+
+    // Hover events (desktop)
+    hotspot.addEventListener('mouseenter', showTooltip);
+    hotspot.addEventListener('mouseleave', hideTooltip);
+
+    // Click events (mobile / toggle)
+    hotspot.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isVisible = tooltipCard && tooltipCard.classList.contains('is-visible');
+      tooltipCards.forEach(card => card.classList.remove('is-visible'));
+      if (tooltipCard && !isVisible) {
+        tooltipCard.classList.add('is-visible');
+      }
+    });
+  });
+
+  // Close tooltips if clicked outside
+  document.addEventListener('click', () => {
+    tooltipCards.forEach(card => card.classList.remove('is-visible'));
+  });
+
+  /* ----------------------------------------------------------
+     SHOP MODAL
+  ---------------------------------------------------------- */
+  const shopModal = document.getElementById('shopModal');
+  const openShopBtns = document.querySelectorAll('.open-shop-btn');
+  const closeShopBtn = document.getElementById('closeShopBtn');
+
+  if (shopModal) {
+    openShopBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        shopModal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    if (closeShopBtn) {
+      closeShopBtn.addEventListener('click', () => {
+        shopModal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    }
+
+    shopModal.addEventListener('click', (e) => {
+      if (e.target === shopModal) {
+        shopModal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && shopModal.classList.contains('is-open')) {
+        shopModal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
     });
   }
 
@@ -4238,6 +5138,173 @@
     }
   }
 
+  /* ----------------------------------------------------------
+     PRELOADER TÁCTICO
+  ---------------------------------------------------------- */
+  const preloader = document.getElementById('tactical-preloader');
+  const preloaderBarFill = document.getElementById('preloaderBarFill');
+  const preloaderText = document.getElementById('preloaderText');
+  const preloaderVideo = document.getElementById('preloader-video');
+
+  if (preloader) {
+    // Iniciar animación de la barra de progreso
+    setTimeout(() => {
+      if (preloaderBarFill) preloaderBarFill.style.width = '100%';
+    }, 100);
+
+    // Mensajes de diagnóstico táctico que se alternan durante la carga
+    const messages = [
+      "CONEXIÓN SEGURA ESTABLECIDA - ENCRIPTACIÓN AES-256...",
+      "VERIFICANDO SISTEMA DE SEGURIDAD TÁCTICA...",
+      "DESENCRIPTANDO DATOS DE INGENIERÍA...",
+      "INICIANDO MÓDULO DE PARTÍCULAS Y RENDERER 3D...",
+      "SISTEMA OPERATIVO - BIENVENIDO A ARMERÍA VID"
+    ];
+
+    let msgIndex = 0;
+    const msgInterval = setInterval(() => {
+      if (preloaderText && msgIndex < messages.length) {
+        preloaderText.textContent = messages[msgIndex];
+        msgIndex++;
+      } else {
+        clearInterval(msgInterval);
+      }
+    }, 500);
+
+    // Función para ocultar preloader
+    const hidePreloader = () => {
+      clearInterval(msgInterval);
+      if (preloaderText) preloaderText.textContent = "SISTEMA OPERATIVO - BIENVENIDO A ARMERÍA VID";
+      if (preloaderBarFill) preloaderBarFill.style.width = '100%';
+      
+      setTimeout(() => {
+        preloader.classList.add('fade-out');
+        // Lanzar animaciones reveal de inmediato para las secciones que son visibles al inicio
+        document.querySelectorAll('.reveal').forEach((el) => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight) {
+            el.classList.add('is-visible');
+          }
+        });
+      }, 500);
+    };
+
+    // Ocultar preloader cuando el video termine o por tiempo límite (failsafe)
+    if (preloaderVideo) {
+      preloaderVideo.addEventListener('ended', hidePreloader);
+      setTimeout(hidePreloader, 3200); // Failsafe de 3.2 segundos
+    } else {
+      setTimeout(hidePreloader, 2500);
+    }
+  }
+
+  /* ----------------------------------------------------------
+     SOBRE NOSOTROS: CONTROL DE VIDEO
+  ---------------------------------------------------------- */
+  const aboutVideo = document.getElementById('about-corporate-video');
+  const btnAboutPlay = document.getElementById('btn-about-play');
+  const btnAboutMute = document.getElementById('btn-about-mute');
+  const btnAboutFs = document.getElementById('btn-about-fs');
+
+  if (aboutVideo) {
+    if (btnAboutPlay) {
+      btnAboutPlay.addEventListener('click', () => {
+        if (aboutVideo.paused) {
+          aboutVideo.play();
+          btnAboutPlay.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+          btnAboutPlay.setAttribute('aria-label', 'Pausar video');
+        } else {
+          aboutVideo.pause();
+          btnAboutPlay.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+          btnAboutPlay.setAttribute('aria-label', 'Reproducir video');
+        }
+      });
+    }
+
+    if (btnAboutMute) {
+      btnAboutMute.addEventListener('click', () => {
+        aboutVideo.muted = !aboutVideo.muted;
+        if (aboutVideo.muted) {
+          btnAboutMute.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M23 9l-6 6M17 9l6 6"/></svg>';
+          btnAboutMute.setAttribute('aria-label', 'Activar sonido');
+        } else {
+          btnAboutMute.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+          btnAboutMute.setAttribute('aria-label', 'Desactivar sonido');
+        }
+      });
+    }
+
+    if (btnAboutFs) {
+      btnAboutFs.addEventListener('click', () => {
+        if (aboutVideo.requestFullscreen) {
+          aboutVideo.requestFullscreen();
+        } else if (aboutVideo.webkitRequestFullscreen) { /* Safari */
+          aboutVideo.webkitRequestFullscreen();
+        } else if (aboutVideo.msRequestFullscreen) { /* IE11 */
+          aboutVideo.msRequestFullscreen();
+        }
+      });
+    }
+  }
+
+  /* ----------------------------------------------------------
+     DESPIECE TÉCNICO: CONTROL DE VIDEO Y SIMULACIÓN HUD
+  ---------------------------------------------------------- */
+  const blueprintVideo = document.getElementById('blueprint-technical-video');
+  const btnBlueprintPlay = document.getElementById('btn-blueprint-play');
+  const btnBlueprintMute = document.getElementById('btn-blueprint-mute');
+  const btnBlueprintFs = document.getElementById('btn-blueprint-fs');
+  const hudDynamicVal = document.getElementById('hudDynamicVal');
+
+  if (blueprintVideo) {
+    if (btnBlueprintPlay) {
+      btnBlueprintPlay.addEventListener('click', () => {
+        if (blueprintVideo.paused) {
+          blueprintVideo.play();
+          btnBlueprintPlay.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="svg-blueprint-play-icon"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+          btnBlueprintPlay.setAttribute('aria-label', 'Pausar video');
+        } else {
+          blueprintVideo.pause();
+          btnBlueprintPlay.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="svg-blueprint-play-icon"><polygon points="5 3 19 12 5 21 5 3"/></svg>';
+          btnBlueprintPlay.setAttribute('aria-label', 'Reproducir video');
+        }
+      });
+    }
+
+    if (btnBlueprintMute) {
+      btnBlueprintMute.addEventListener('click', () => {
+        blueprintVideo.muted = !blueprintVideo.muted;
+        if (blueprintVideo.muted) {
+          btnBlueprintMute.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="svg-blueprint-mute-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M23 9l-6 6M17 9l6 6"/></svg>';
+          btnBlueprintMute.setAttribute('aria-label', 'Activar sonido');
+        } else {
+          btnBlueprintMute.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="svg-blueprint-mute-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>';
+          btnBlueprintMute.setAttribute('aria-label', 'Desactivar sonido');
+        }
+      });
+    }
+
+    if (btnBlueprintFs) {
+      btnBlueprintFs.addEventListener('click', () => {
+        if (blueprintVideo.requestFullscreen) {
+          blueprintVideo.requestFullscreen();
+        } else if (blueprintVideo.webkitRequestFullscreen) { /* Safari */
+          blueprintVideo.webkitRequestFullscreen();
+        } else if (blueprintVideo.msRequestFullscreen) { /* IE11 */
+          blueprintVideo.msRequestFullscreen();
+        }
+      });
+    }
+  }
+
+  // Simulación de fluctuación de porcentaje en HUD de diagnóstico técnico
+  if (hudDynamicVal) {
+    setInterval(() => {
+      const val = (98 + Math.random() * 1.5).toFixed(1);
+      hudDynamicVal.textContent = val + '%';
+    }, 1800);
+  }
+
 })();
 </script>
 
@@ -4246,18 +5313,18 @@
   <!-- Tooltip/Bubble message -->
   <div class="whatsapp-float-tooltip">
     <div class="whatsapp-tooltip-header">
-      <span class="whatsapp-tooltip-title">Soporte VIP</span>
+      <span class="whatsapp-tooltip-title">Soporte VID</span>
       <span class="whatsapp-tooltip-status">En línea</span>
     </div>
     <p class="whatsapp-tooltip-text">¿Desea agendar un diagnóstico?</p>
     <button class="whatsapp-tooltip-close" aria-label="Cerrar mensaje" type="button">&times;</button>
   </div>
-  <a href="https://wa.me/573000000000?text=Hola%2C%20deseo%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20en%20Armer%C3%ADa%20VIP%20Technologies"
+  <a href="https://wa.me/573000000000?text=Hola%2C%20deseo%20agendar%20un%20diagn%C3%B3stico%20t%C3%A9cnico%20en%20Armer%C3%ADa%20VID%20Technologies"
      class="whatsapp-float-btn"
      target="_blank"
      rel="noopener noreferrer"
-     aria-label="Contactar al soporte técnico por WhatsApp VIP"
-     title="Escribir al WhatsApp de Armería VIP">
+     aria-label="Contactar al soporte técnico por WhatsApp VID"
+     title="Escribir al WhatsApp de Armería VID">
     <div class="whatsapp-icon-wrapper">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
