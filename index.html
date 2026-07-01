@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -852,14 +852,16 @@
       z-index: 0;
       overflow: hidden;
       pointer-events: none;
+      transform: scale(1.05); /* Margin for parallax shift */
+      transition: transform 0.5s ease;
     }
 
     .hero-video-bg video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.08; /* Muy sutil */
-      filter: grayscale(80%) contrast(120%);
+      opacity: 0.25; /* Increased for premium cinematic video visibility */
+      filter: grayscale(20%) contrast(110%);
     }
 
     .hero-video-bg .video-overlay {
@@ -3302,10 +3304,10 @@
 ============================================================ -->
 <main id="main-content">
 <section id="hero" aria-label="Armería VIP - Ingeniería de Precisión">
-  <!-- Background Video (Engranajes) -->
+  <!-- Background Video (0701 Cinematic Video) -->
   <div class="hero-video-bg">
     <video autoplay loop muted playsinline>
-      <source src="RECURSOS/video_202606221112.mp4" type="video/mp4">
+      <source src="RECURSOS/0701.mp4" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
   </div>
@@ -4550,27 +4552,12 @@
 
     document.addEventListener('mousemove', e => {
       tx = e.clientX;
-      ty = e.clientY;
-    });
-
-    (function animateCursor() {
-      cx += (tx - cx) * 0.18;
-      cy += (ty - cy) * 0.18;
-      cursor.style.left = cx + 'px';
-      cursor.style.top = cy + 'px';
-      requestAnimationFrame(animateCursor);
-    })();
-
-    document.querySelectorAll('a, button, .service-card, .value-card, .benefit-card, .client-type-card, .hotspot, .open-shop-btn, .product-buy-btn').forEach(el => {
-      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-    });
-  }
-
-  /* ----------------------------------------------------------
-     PARTICLES CANVAS (GOLD SPARKS)
+    /* ----------------------------------------------------------
+     PARTICLES CANVAS (GOLD SPARKS & CIRCUITS) & PARALLAX
   ---------------------------------------------------------- */
   const canvas = document.getElementById('particleCanvas');
+  let mouse = { x: -1000, y: -1000, active: false };
+
   if (canvas) {
     const ctx = canvas.getContext('2d');
     let w = canvas.width = canvas.offsetWidth;
@@ -4582,21 +4569,23 @@
     });
 
     const particles = [];
-    const maxParticles = 50;
-    let mouse = { x: -1000, y: -1000, active: false };
+    const maxParticles = 45; // Sparks count
+    const circuits = [];
+    const maxCircuits = 12; // Faint circuit lines count
 
     class Spark {
       constructor() {
         this.reset();
+        this.y = Math.random() * h; // Initial scatter
       }
       reset() {
         this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.vx = (Math.random() - 0.5) * 0.3;
-        this.vy = -(Math.random() * 0.6 + 0.2); // upward movement
-        this.size = Math.random() * 1.8 + 0.4;
-        this.alpha = Math.random() * 0.6 + 0.1;
-        this.decay = Math.random() * 0.0018 + 0.0008;
+        this.y = h + 10;
+        this.vx = (Math.random() - 0.5) * 0.15; // Slow ambient drifting
+        this.vy = -(Math.random() * 0.35 + 0.1); // Slow upward speed
+        this.size = Math.random() * 1.5 + 0.4;
+        this.alpha = Math.random() * 0.5 + 0.1;
+        this.decay = Math.random() * 0.001 + 0.0004;
         this.color = Math.random() > 0.5 ? '#FFB300' : '#E8C84A';
       }
       update() {
@@ -4610,14 +4599,13 @@
           const dist = Math.sqrt(dx*dx + dy*dy);
           if (dist < 150) {
             const force = (150 - dist) / 150;
-            this.vx += (dx / dist) * force * 0.02;
-            this.vy += (dy / dist) * force * 0.02;
+            this.vx += (dx / dist) * force * 0.01;
+            this.vy += (dy / dist) * force * 0.01;
           }
         }
 
         if (this.alpha <= 0 || this.y < 0 || this.x < 0 || this.x > w) {
           this.reset();
-          this.y = h + 10;
         }
       }
       draw() {
@@ -4633,38 +4621,118 @@
       }
     }
 
+    class CircuitLine {
+      constructor() {
+        this.reset();
+        this.y = Math.random() * h; // Initial scatter
+      }
+      reset() {
+        this.x = Math.random() * w;
+        this.y = h + Math.random() * 50;
+        this.points = [{x: this.x, y: this.y}];
+        this.currentLength = 0;
+        this.maxLength = Math.random() * 110 + 40;
+        this.angle = -Math.PI / 2; // Straight up
+        this.speed = Math.random() * 0.4 + 0.2; // Subtle slow speed
+        this.alpha = Math.random() * 0.22 + 0.04; // Faint, subtle glow
+        this.decay = Math.random() * 0.0006 + 0.0003;
+        this.lineWidth = Math.random() * 0.5 + 0.3;
+        this.color = '#E8C84A';
+        this.completed = false;
+      }
+      update() {
+        if (this.completed) {
+          this.alpha -= this.decay * 1.5;
+          if (this.alpha <= 0) {
+            this.reset();
+          }
+          return;
+        }
+
+        let lastPoint = this.points[this.points.length - 1];
+        let nextX = lastPoint.x + Math.cos(this.angle) * this.speed;
+        let nextY = lastPoint.y + Math.sin(this.angle) * this.speed;
+
+        this.currentLength += this.speed;
+        if (this.currentLength > this.maxLength) {
+          this.completed = true;
+        } else if (Math.random() < 0.015 && this.points.length < 4) {
+          this.points.push({x: nextX, y: nextY});
+          let rand = Math.random();
+          if (rand < 0.4) {
+            this.angle = -Math.PI / 2; // Straight up
+          } else if (rand < 0.7) {
+            this.angle = -Math.PI / 4; // 45 deg right diagonal
+          } else {
+            this.angle = -3 * Math.PI / 4; // 45 deg left diagonal
+          }
+        } else {
+          this.points[this.points.length - 1] = {x: nextX, y: nextY};
+        }
+
+        if (nextY < 0 || nextX < 0 || nextX > w) {
+          this.completed = true;
+        }
+      }
+      draw() {
+        if (this.points.length < 1) return;
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = this.lineWidth;
+        ctx.shadowBlur = 5;
+        ctx.shadowColor = this.color;
+
+        ctx.beginPath();
+        ctx.moveTo(this.points[0].x, this.points[0].y);
+        for (let i = 1; i < this.points.length; i++) {
+          ctx.lineTo(this.points[i].x, this.points[i].y);
+        }
+        ctx.stroke();
+
+        ctx.fillStyle = this.color;
+        for (let i = 0; i < this.points.length; i++) {
+          ctx.beginPath();
+          ctx.arc(this.points[i].x, this.points[i].y, this.lineWidth * 1.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+
     for (let i = 0; i < maxParticles; i++) {
       particles.push(new Spark());
     }
-
-    const hero = document.getElementById('hero');
-    hero.addEventListener('mousemove', (e) => {
-      const rect = hero.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-      mouse.active = true;
-    });
-
-    hero.addEventListener('mouseleave', () => {
-      mouse.active = false;
-    });
+    for (let i = 0; i < maxCircuits; i++) {
+      circuits.push(new CircuitLine());
+    }
 
     (function loop() {
       ctx.clearRect(0, 0, w, h);
+      
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
       }
+      
+      for (let i = 0; i < circuits.length; i++) {
+        circuits[i].update();
+        circuits[i].draw();
+      }
+      
       requestAnimationFrame(loop);
     })();
   }
 
   /* ----------------------------------------------------------
-     3D WEAPON PARALLAX TILT
+     PREMIUM CINEMATIC PARALLAX & TILT SYSTEM
   ---------------------------------------------------------- */
   const heroSection = document.getElementById('hero');
   const weaponWrapper = document.getElementById('weapon3dWrapper');
-  if (heroSection && weaponWrapper) {
+  const videoBg = document.querySelector('.hero-video-bg');
+  const bgText = document.querySelector('.hero-bg-text-container');
+
+  if (heroSection) {
     heroSection.addEventListener('mousemove', (e) => {
       const rect = heroSection.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
@@ -4672,12 +4740,34 @@
       const normX = x / (rect.width / 2);
       const normY = y / (rect.height / 2);
       
-      const rotateY = normX * 15; // max 15 degrees
-      const rotateX = -normY * 15; // max 15 degrees
-      
-      weaponWrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      // Update mouse coordinate values for sparks dispersion
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+
+      // 1. Particle canvas parallax shift (moves with the mouse for foreground depth)
+      if (particleCanvas) {
+        particleCanvas.style.transform = `translate(${normX * 15}px, ${normY * 15}px)`;
+      }
+
+      // 2. Video background parallax shift (moves in opposite direction for background depth)
+      if (videoBg) {
+        videoBg.style.transform = `scale(1.05) translate(${normX * -8}px, ${normY * -8}px)`;
+      }
+
+      // 3. Giant background text parallax shift (intermediate depth layer)
+      if (bgText) {
+        bgText.style.transform = `translate(${normX * -12}px, ${normY * -12}px)`;
+      }
+
+      // 4. Center 3D weapon tilt (parallax rotation for the floating item)
+      if (weaponWrapper) {
+        const rotateY = normX * 12; // 12 deg max tilt
+        const rotateX = -normY * 12;
+        weaponWrapper.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
     });
-    
+
     heroSection.addEventListener('mouseleave', () => {
       weaponWrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
       weaponWrapper.style.transition = 'transform 0.5s ease';
