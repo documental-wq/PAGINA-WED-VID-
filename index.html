@@ -624,8 +624,8 @@
     ============================================================ */
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 700ms ease, transform 700ms ease;
+      transform: translateY(20px);
+      transition: opacity 600ms ease, transform 600ms ease;
     }
     .reveal.is-visible {
       opacity: 1;
@@ -633,8 +633,19 @@
     }
     .reveal-left {
       opacity: 0;
-      transform: translateX(-30px);
-      transition: opacity 700ms ease, transform 700ms ease;
+      transform: translateX(-20px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal-left.is-visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(20px);
+      transition: opacity 600ms ease, transform 600ms ease;
+    }
+    .reveal-right.is-visible { opacity: 1; transform: translateX(0); }
+    /* Fallback: si JS falla, mostrar todo */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal, .reveal-left, .reveal-right { opacity: 1 !important; transform: none !important; }
     }
     .reveal-left.is-visible { opacity: 1; transform: translateX(0); }
     .reveal-right {
@@ -5211,14 +5222,19 @@
   }
 
   /* ----------------------------------------------------------
-     REVEAL ANIMATIONS (sin preloader)
+     REVEAL ANIMATIONS — activar todas al cargar
   ---------------------------------------------------------- */
-  document.querySelectorAll('.reveal').forEach((el) => {
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
-      el.classList.add('is-visible');
-    }
-  });
+  const revealAll = () => {
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 100) {
+        el.classList.add('is-visible');
+      }
+    });
+  };
+  revealAll(); // Activar elementos visibles al cargar
+  window.addEventListener('scroll', revealAll, { passive: true });
+  window.addEventListener('resize', revealAll, { passive: true });
 
 
   /* ----------------------------------------------------------
