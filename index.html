@@ -5286,13 +5286,21 @@
       }, 500);
     };
 
-    // Ocultar preloader cuando el video termine o por tiempo límite (failsafe)
+    // Ocultar preloader: siempre en máximo 1.5s y click para omitir
+    const failsafeTimer = setTimeout(hidePreloader, 1500);
+
     if (preloaderVideo) {
-      preloaderVideo.addEventListener('ended', hidePreloader);
-      setTimeout(hidePreloader, 3200); // Failsafe de 3.2 segundos
-    } else {
-      setTimeout(hidePreloader, 2500);
+      preloaderVideo.addEventListener('ended', () => {
+        clearTimeout(failsafeTimer);
+        hidePreloader();
+      });
     }
+
+    // Click o tap para omitir manualmente
+    preloader.addEventListener('click', () => {
+      clearTimeout(failsafeTimer);
+      hidePreloader();
+    });
   }
 
   /* ----------------------------------------------------------
