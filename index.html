@@ -4746,8 +4746,8 @@
       mouse.active = true;
 
       // 1. Particle canvas parallax shift (moves with the mouse for foreground depth)
-      if (particleCanvas) {
-        particleCanvas.style.transform = `translate(${normX * 15}px, ${normY * 15}px)`;
+      if (canvas) {
+        canvas.style.transform = `translate(${normX * 15}px, ${normY * 15}px)`;
       }
 
       // 2. Video background parallax shift (moves in opposite direction for background depth)
@@ -4769,12 +4769,19 @@
     });
 
     heroSection.addEventListener('mouseleave', () => {
-      weaponWrapper.style.transform = 'rotateX(0deg) rotateY(0deg)';
-      weaponWrapper.style.transition = 'transform 0.5s ease';
+      mouse.active = false;
+      const easing = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+      if (canvas) { canvas.style.transition = easing; canvas.style.transform = 'translate(0,0)'; }
+      if (videoBg) { videoBg.style.transition = easing; videoBg.style.transform = 'scale(1.05) translate(0,0)'; }
+      if (bgText) { bgText.style.transition = easing; bgText.style.transform = 'translate(0,0)'; }
+      if (weaponWrapper) { weaponWrapper.style.transition = easing; weaponWrapper.style.transform = 'rotateX(0deg) rotateY(0deg)'; }
     });
 
     heroSection.addEventListener('mouseenter', () => {
-      weaponWrapper.style.transition = 'none';
+      if (canvas) canvas.style.transition = 'none';
+      if (videoBg) videoBg.style.transition = 'none';
+      if (bgText) bgText.style.transition = 'none';
+      if (weaponWrapper) weaponWrapper.style.transition = 'none';
     });
   }
 
