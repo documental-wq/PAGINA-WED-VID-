@@ -3213,32 +3213,7 @@
 </head>
 <body>
 
-<!-- Tactical Preloader -->
-<div id="tactical-preloader">
-  <div class="preloader-overlay"></div>
-  <div class="preloader-content">
-    <div class="preloader-hud">
-      <div class="hud-corner top-left"></div>
-      <div class="hud-corner top-right"></div>
-      <div class="hud-corner bottom-left"></div>
-      <div class="hud-corner bottom-right"></div>
-      
-      <div class="preloader-video-wrapper">
-        <video id="preloader-video" autoplay muted playsinline>
-          <source src="RECURSOS/0622 (1).mp4" type="video/mp4">
-        </video>
-      </div>
-      
-      <div class="preloader-status">
-        <span class="status-tag">SISTEMA INICIADO</span>
-        <div class="status-bar">
-          <div class="status-bar-fill" id="preloaderBarFill"></div>
-        </div>
-        <div class="status-text" id="preloaderText">CONEXION SEGURA ESTABLECIDA - CONFIGURANDO ENTORNO TÁCTICO</div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- Preloader removed for instant page access -->
 
 <!-- Skip link -->
 <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
@@ -5236,72 +5211,15 @@
   }
 
   /* ----------------------------------------------------------
-     PRELOADER TÁCTICO
+     REVEAL ANIMATIONS (sin preloader)
   ---------------------------------------------------------- */
-  const preloader = document.getElementById('tactical-preloader');
-  const preloaderBarFill = document.getElementById('preloaderBarFill');
-  const preloaderText = document.getElementById('preloaderText');
-  const preloaderVideo = document.getElementById('preloader-video');
-
-  if (preloader) {
-    // Iniciar animación de la barra de progreso
-    setTimeout(() => {
-      if (preloaderBarFill) preloaderBarFill.style.width = '100%';
-    }, 100);
-
-    // Mensajes de diagnóstico táctico que se alternan durante la carga
-    const messages = [
-      "CONEXIÓN SEGURA ESTABLECIDA - ENCRIPTACIÓN AES-256...",
-      "VERIFICANDO SISTEMA DE SEGURIDAD TÁCTICA...",
-      "DESENCRIPTANDO DATOS DE INGENIERÍA...",
-      "INICIANDO MÓDULO DE PARTÍCULAS Y RENDERER 3D...",
-      "SISTEMA OPERATIVO - BIENVENIDO A ARMERÍA VIP"
-    ];
-
-    let msgIndex = 0;
-    const msgInterval = setInterval(() => {
-      if (preloaderText && msgIndex < messages.length) {
-        preloaderText.textContent = messages[msgIndex];
-        msgIndex++;
-      } else {
-        clearInterval(msgInterval);
-      }
-    }, 500);
-
-    // Función para ocultar preloader
-    const hidePreloader = () => {
-      clearInterval(msgInterval);
-      if (preloaderText) preloaderText.textContent = "SISTEMA OPERATIVO - BIENVENIDO A ARMERÍA VIP";
-      if (preloaderBarFill) preloaderBarFill.style.width = '100%';
-      
-      setTimeout(() => {
-        preloader.classList.add('fade-out');
-        // Lanzar animaciones reveal de inmediato para las secciones que son visibles al inicio
-        document.querySelectorAll('.reveal').forEach((el) => {
-          const rect = el.getBoundingClientRect();
-          if (rect.top < window.innerHeight) {
-            el.classList.add('is-visible');
-          }
-        });
-      }, 500);
-    };
-
-    // Ocultar preloader: siempre en máximo 1.5s y click para omitir
-    const failsafeTimer = setTimeout(hidePreloader, 1500);
-
-    if (preloaderVideo) {
-      preloaderVideo.addEventListener('ended', () => {
-        clearTimeout(failsafeTimer);
-        hidePreloader();
-      });
+  document.querySelectorAll('.reveal').forEach((el) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('is-visible');
     }
+  });
 
-    // Click o tap para omitir manualmente
-    preloader.addEventListener('click', () => {
-      clearTimeout(failsafeTimer);
-      hidePreloader();
-    });
-  }
 
   /* ----------------------------------------------------------
      SOBRE NOSOTROS: CONTROL DE VIDEO
