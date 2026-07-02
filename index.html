@@ -4538,11 +4538,29 @@
 
     document.addEventListener('mousemove', e => {
       tx = e.clientX;
-    /* ----------------------------------------------------------
+      ty = e.clientY;
+    });
+
+    (function animateCursor() {
+      cx += (tx - cx) * 0.18;
+      cy += (ty - cy) * 0.18;
+      cursor.style.left = cx + 'px';
+      cursor.style.top = cy + 'px';
+      requestAnimationFrame(animateCursor);
+    })();
+
+    document.querySelectorAll('a, button, .service-card, .hotspot, .open-shop-btn, .product-buy-btn').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+  }
+
+  /* ----------------------------------------------------------
      PARTICLES CANVAS (GOLD SPARKS & CIRCUITS) & PARALLAX
   ---------------------------------------------------------- */
   const canvas = document.getElementById('particleCanvas');
   let mouse = { x: -1000, y: -1000, active: false };
+
 
   if (canvas) {
     const ctx = canvas.getContext('2d');
