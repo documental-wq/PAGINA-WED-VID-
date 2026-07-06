@@ -852,7 +852,8 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding-top: 88px;
+      padding-top: 130px; /* Increased to avoid crowding near navbar */
+      padding-bottom: 80px;
       z-index: 1;
     }
 
@@ -982,16 +983,18 @@
     .hero-main-desc {
       font-family: var(--font-body);
       font-weight: 300;
-      font-size: clamp(14px, 1.3vw, 16px);
+      font-size: clamp(14px, 1.3vw, 17px);
       color: var(--color-text-secondary);
       line-height: 1.6;
-      max-width: 520px;
+      max-width: 680px;
+      text-align: center;
+      margin: 0 auto;
     }
 
     .hero-cta-group {
       display: flex;
       gap: var(--space-4);
-      margin-top: var(--space-2);
+      margin-top: var(--space-6);
     }
 
     @keyframes fadeInLeft {
@@ -1175,10 +1178,9 @@
 
     /* Bottom Motivational Phrase */
     .hero-footer-phrase {
-      position: absolute;
-      bottom: 40px;
-      left: 50%;
-      transform: translateX(-50%);
+      position: relative;
+      margin-top: clamp(40px, 8vh, 80px); /* Pushes phrase down dynamically */
+      margin-bottom: var(--space-4);
       width: 90%;
       max-width: 800px;
       text-align: center;
@@ -1200,8 +1202,8 @@
     }
 
     @keyframes fadeInUpPhrase {
-      from { opacity: 0; transform: translate3d(-50%, 20px, 0); }
-      to   { opacity: 1; transform: translate3d(-50%, 0, 0); }
+      from { opacity: 0; transform: translate3d(0, 25px, 0); }
+      to   { opacity: 1; transform: translate3d(0, 0, 0); }
     }
 
     @keyframes fadeInUp {
@@ -2932,7 +2934,8 @@
       }
       .hero-footer-phrase {
         font-size: 1.3rem;
-        bottom: 20px;
+        bottom: auto;
+        margin-top: 30px;
         line-height: 1.2;
       }
     }
@@ -3342,13 +3345,13 @@
     <div class="hero-bg-text-row text-row-right">ARMERIA VIP</div>
   </div>
 
-  <!-- Center Content: Floating 3D Weapon with Hotspots -->
+  <!-- Center Content: Hero Layout -->
   <div class="hero-center-wrapper">
     <!-- Left Column: Title & Info -->
     <div class="hero-left-content">
       <span class="hero-badge">DIAGNÓSTICO & RESTAURACIÓN</span>
       <h1 class="hero-main-title">
-        Ingeniería de <br><span class="accent">Precisión</span> para <br>tus Activos.
+        Ingeniería de <span class="accent">Precisión</span> para tus Activos.
       </h1>
       <p class="hero-main-desc">
         Mantenimiento preventivo, limpieza ultrasónica y calibración micrométrica de grado militar bajo protocolos de trazabilidad blindada.
