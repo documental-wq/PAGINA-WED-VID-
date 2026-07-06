@@ -929,27 +929,30 @@
       position: relative;
       z-index: 10;
       width: 100%;
-      max-width: var(--container-max);
+      max-width: 850px;
       padding: 0 var(--container-padding);
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: var(--space-12);
+      display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 0 auto;
     }
 
     /* Hero Left Content */
     .hero-left-content {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: var(--space-5);
       z-index: 10;
-      text-align: left;
+      text-align: center;
       animation: fadeInLeft 800ms cubic-bezier(0.16, 1, 0.3, 1) both;
       animation-delay: 200ms;
     }
 
     .hero-badge {
-      align-self: flex-start;
+      align-self: center;
       background: rgba(255, 179, 0, 0.08);
       border: 1px solid rgba(255, 179, 0, 0.2);
       color: var(--color-gold);
@@ -2886,7 +2889,7 @@
     }
 
     @media (max-width: 1024px) {
-      .hero-center-wrapper { grid-template-columns: 1fr; gap: var(--space-8); text-align: center; justify-items: center; }
+      .hero-center-wrapper { gap: var(--space-8); }
       .about-grid { grid-template-columns: 1fr; }
       .values-horizontal-grid { grid-template-columns: repeat(2, 1fr); }
       .compliance-inner { grid-template-columns: 1fr; }
@@ -3357,13 +3360,6 @@
     </div>
 
     <!-- Right Column: Visor 3D Glock 17 -->
-    <!-- Right Column: Premium Brand Shield Logo -->
-    <div class="weapon-3d-container">
-      <div class="weapon-3d-wrapper" id="weapon3dWrapper">
-        <div class="hero-brand-shield-glow"></div>
-        <img src="logo.png" alt="Armería VIP Shield" class="hero-brand-shield">
-      </div>
-    </div>
   </div>
 
   <!-- Bottom Phrase -->
