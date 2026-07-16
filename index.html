@@ -2683,6 +2683,67 @@
       line-height: 1.6;
     }
 
+    /* ── FAQ ─────────────────────────────────────── */
+    .faq-list {
+      max-width: 860px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .faq-item {
+      background: var(--color-carbon);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color 300ms ease;
+    }
+    .faq-item:has(.faq-question[aria-expanded="true"]) {
+      border-color: rgba(201,162,39,0.4);
+    }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-6);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-primary);
+      text-align: left;
+      letter-spacing: 0.01em;
+      line-height: 1.5;
+      transition: color 200ms ease;
+    }
+    .faq-question:hover { color: var(--color-gold); }
+    .faq-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      color: var(--color-gold);
+      transition: transform 300ms ease;
+    }
+    .faq-question[aria-expanded="true"] .faq-icon {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      padding: 0 var(--space-6) var(--space-5);
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-answer p {
+      font-family: var(--font-body);
+      font-size: var(--text-sm);
+      font-weight: 300;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      margin-top: var(--space-4);
+    }
+
     /* Map SVG */
     .map-svg-container {
       border: 1px solid var(--color-border);
@@ -3943,8 +4004,8 @@
   <div class="container">
     <div class="why-header reveal">
       <p class="section-label">Por Qué Elegirnos</p>
-      <h2 class="section-title" id="whyus-title">La Diferencia VIP</h2>
-      <p class="section-subtitle" style="margin: var(--space-4) auto 0; text-align:center;">No somos el taller más cercano. Somos el estándar más alto.</p>
+      <h2 class="section-title" id="whyus-title">Compromiso con la calidad y la confianza</h2>
+      <p class="section-subtitle" style="margin: var(--space-4) auto 0; text-align:center;">Personal calificado, procedimientos técnicos y control documental en cada servicio que prestamos.</p>
     </div>
 
     <div class="benefits-grid">
@@ -4102,19 +4163,96 @@
     <!-- Counters -->
     <div class="counters-row">
       <div class="counter-card reveal reveal-delay-1">
-        <span class="counter-value" data-target="500" data-suffix="+">0+</span>
-        <span class="counter-label">Equipos Intervenidos</span>
+        <span class="counter-value" style="font-size:2rem;">Lun–Vie</span>
+        <span class="counter-label">Atención bajo cita previa</span>
       </div>
       <div class="counter-card reveal reveal-delay-2">
-        <span class="counter-value" data-target="80" data-suffix="+">0+</span>
-        <span class="counter-label">Clientes Corporativos</span>
+        <span class="counter-value" style="font-size:1.6rem;">8am – 5pm</span>
+        <span class="counter-label">Horario de atención</span>
       </div>
       <div class="counter-card reveal reveal-delay-3">
-        <span class="counter-value" data-target="100" data-suffix="%">0%</span>
-        <span class="counter-label">Satisfacción Garantizada</span>
+        <span class="counter-value" style="font-size:1.6rem;">&lt; 24h</span>
+        <span class="counter-label">Tiempo de respuesta</span>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section id="faq" class="section" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-header reveal" style="max-width:640px;margin-bottom:var(--space-12);">
+      <p class="section-label">Preguntas Frecuentes</p>
+      <h2 class="section-title" id="faq-title">Información para nuestros clientes</h2>
+      <p class="section-subtitle">Resolvemos sus dudas más comunes sobre nuestros servicios, proceso de atención y normatividad.</p>
+    </div>
+
+    <div class="faq-list" role="list">
+
+      <div class="faq-item reveal reveal-delay-1" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+          ¿Qué documentos debo presentar para entregar mi arma de fuego?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+          <p>Para recibir su arma de fuego es indispensable presentar el documento de identificación del titular y el salvoconducto o permiso de porte o tenencia vigente expedido por las autoridades competentes. No se recibirán armas sin la documentación reglamentaria correspondiente.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+          ¿Pueden atenderme sin cita previa?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+          <p>No. La atención es exclusivamente bajo cita previa. Esto nos permite garantizar la disponibilidad del técnico asignado, el tiempo necesario para el servicio y el cumplimiento de los protocolos de seguridad y control documental establecidos.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-3" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+          ¿Realizan mantenimiento a todo tipo de armas de fuego?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+          <p>Prestamos servicios de mantenimiento, reparación y restauración para armas de fuego legalmente registradas: pistolas, revólveres, escopetas y rifles. Cada caso es evaluado previamente para determinar si el servicio requerido está dentro de nuestra capacidad técnica.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-4" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+          ¿Comercializan armas, munición o accesorios?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+          <p>No. Armería VIP Tecnologies SAS no comercializa armas de fuego, munición, accesorios ni dispositivos menos letales. Nuestra actividad está enfocada exclusivamente en la prestación de servicios especializados de mantenimiento, reparación, restauración y tratamientos superficiales.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-5" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+          ¿Cuánto tiempo tarda el servicio de mantenimiento?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+          <p>El tiempo varía según el tipo de servicio y el estado del arma. Un mantenimiento preventivo de rutina puede completarse en el mismo día o al día siguiente. Reparaciones o restauraciones más complejas pueden tomar más tiempo, lo cual se informa al cliente antes de iniciar el servicio.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-6" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+          ¿Mi arma queda en custodia mientras se realiza el servicio?
+          <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden>
+          <p>Sí. El arma permanece bajo custodia y control documental en nuestras instalaciones desde su recepción hasta su entrega. Se abre un registro de entrada con los datos del titular, la descripción del arma y el servicio solicitado. La entrega se realiza únicamente al titular autorizado.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -4125,8 +4263,8 @@
   <div class="container">
     <div class="section-header reveal" style="max-width:600px;margin-bottom:var(--space-12);">
       <p class="section-label">Contacto</p>
-      <h2 class="section-title" id="contact-title">Agenda tu Diagnóstico Técnico</h2>
-      <p class="section-subtitle">¿Tu equipamiento requiere inspección especializada? Cuéntanos. Respondemos en menos de 24 horas hábiles.</p>
+      <h2 class="section-title" id="contact-title">Solicite su cita de diagnóstico</h2>
+      <p class="section-subtitle">¿Su arma de fuego requiere mantenimiento, reparación o restauración? Contáctenos. Respondemos en menos de 24 horas hábiles.</p>
     </div>
 
     <div class="contact-inner">
@@ -4298,9 +4436,9 @@
             </svg>
             Disponibilidad
           </div>
-          <p class="contact-item-value" style="font-size:var(--text-sm);">Lunes a Viernes — Bajo cita previa</p>
-          <p class="contact-item-note">Sábados: Casos urgentes (consultar)</p>
-          <p class="contact-item-note">Respuesta en menos de 24 horas hábiles</p>
+          <p class="contact-item-value" style="font-size:var(--text-sm);">Lunes a Viernes: 8:00 a.m. – 5:00 p.m.</p>
+          <p class="contact-item-note">Sábados: bajo consulta previa</p>
+          <p class="contact-item-note">Atención exclusivamente con cita programada</p>
         </div>
 
         <div class="contact-warning reveal reveal-delay-5">
@@ -5249,6 +5387,31 @@
   window.addEventListener('scroll', revealAll, { passive: true });
   window.addEventListener('resize', revealAll, { passive: true });
 
+
+  /* ----------------------------------------------------------
+     FAQ ACCORDION
+  ---------------------------------------------------------- */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const answerId = btn.getAttribute('aria-controls');
+      const answer = document.getElementById(answerId);
+
+      // Close all others
+      document.querySelectorAll('.faq-question').forEach(other => {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          const otherId = other.getAttribute('aria-controls');
+          const otherAnswer = document.getElementById(otherId);
+          if (otherAnswer) otherAnswer.hidden = true;
+        }
+      });
+
+      // Toggle this one
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (answer) answer.hidden = expanded;
+    });
+  });
 
   /* ----------------------------------------------------------
      SOBRE NOSOTROS: CONTROL DE VIDEO
