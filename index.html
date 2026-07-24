@@ -192,6 +192,8 @@
     ============================================================ */
     #custom-cursor {
       position: fixed;
+      top: 0;
+      left: 0;
       width: 32px;
       height: 32px;
       pointer-events: none;
@@ -4753,10 +4755,9 @@
     });
 
     (function animateCursor() {
-      cx += (tx - cx) * 0.18;
-      cy += (ty - cy) * 0.18;
-      cursor.style.left = cx + 'px';
-      cursor.style.top = cy + 'px';
+      cx += (tx - cx) * 0.45;
+      cy += (ty - cy) * 0.45;
+      cursor.style.transform = 'translate3d(' + cx + 'px, ' + cy + 'px, 0) translate(-50%, -50%)';
       requestAnimationFrame(animateCursor);
     })();
 
