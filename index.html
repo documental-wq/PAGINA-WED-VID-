@@ -3456,16 +3456,15 @@
 
     /* ── PROCESS TIMELINE GLOW ───────────────────────────── */
     .process-line-fill {
-      box-shadow: 0 0 10px rgba(255, 179, 0, 0.8), 0 0 4px rgba(255, 179, 0, 0.4);
+      box-shadow: 0 0 6px rgba(255, 179, 0, 0.4);
     }
 
     /* ── VALUE CARD ICON HOVER ANIMATION ─────────────────── */
     .value-card-icon {
-      transition: transform 450ms cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 300ms ease;
+      transition: transform 450ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     .value-card:hover .value-card-icon {
       transform: scale(1.12) rotate(8deg);
-      filter: drop-shadow(0 0 6px rgba(255, 179, 0, 0.5));
     }
 
   </style>
@@ -4774,9 +4773,8 @@
         </div>
         <h4 class="product-title">Miras Glock 43X</h4>
         <p class="product-desc">Punto frontal de alta visibilidad, notch trasero para mejor alineación y fácil instalación sin modificaciones.</p>
-        <div class="product-footer">
-          <span class="product-price">$380.000 COP</span>
-          <a href="https://wa.me/573012803262?text=Hola%2C%20deseo%20comprar%20las%20Miras%20Glock%2043X%20en%20Armer%C3%ADa%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn">COMPRAR</a>
+        <div class="product-footer" style="justify-content: center;">
+          <a href="https://wa.me/573012803262?text=Hola%2C%20deseo%20consultar%20sobre%20las%20Miras%20Glock%2043X%20en%20Armer%C3%ADa%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn" style="width: 100%; text-align: center; justify-content: center;">CONSULTAR</a>
         </div>
       </div>
 
@@ -4792,9 +4790,8 @@
         </div>
         <h4 class="product-title">Miras para Jericho 9-41</h4>
         <p class="product-desc">Punto frontal de alta visibilidad, perfil bajo y altamente resistente. Fácil instalación sin modificaciones.</p>
-        <div class="product-footer">
-          <span class="product-price">$380.000 COP</span>
-          <a href="https://wa.me/573012803262?text=Hola%2C%20deseo%20comprar%20las%20Miras%20para%20Jericho%209-41%20en%20Armer%C3%ADa%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn">COMPRAR</a>
+        <div class="product-footer" style="justify-content: center;">
+          <a href="https://wa.me/573012803262?text=Hola%2C%20deseo%20consultar%20sobre%20las%20Miras%20para%20Jericho%209-41%20en%20Armer%C3%ADa%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn" style="width: 100%; text-align: center; justify-content: center;">CONSULTAR</a>
         </div>
       </div>
 
@@ -4810,9 +4807,8 @@
         </div>
         <h4 class="product-title">Aceite Lubricante APEX</h4>
         <p class="product-desc">Lubricante y anticorrosivo premium para máximo desempeño y mayor durabilidad de sus mecanismos de precisión.</p>
-        <div class="product-footer">
-          <span class="product-price">$45.000 COP</span>
-          <a href="https://wa.me/573012803262?text=Hola%2C%20deseo%20comprar%20el%20Aceite%20Lubricante%20APEX%20en%20Armer%C3%ADa%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn">COMPRAR</a>
+        <div class="product-footer" style="justify-content: center;">
+          <a href="https://wa.me/573012803262?text=Hola%2C%20deseo%20consultar%20sobre%20el%20Aceite%20Lubricante%20APEX%20en%20Armer%C3%ADa%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn" style="width: 100%; text-align: center; justify-content: center;">CONSULTAR</a>
         </div>
       </div>
 
@@ -4828,9 +4824,8 @@
         </div>
         <h4 class="product-title">Ópticas y Accesorios</h4>
         <p class="product-desc">Equipamiento premium de última generación. Miras de punto rojo Holosun y componentes de alta calidad.</p>
-        <div class="product-footer">
-          <span class="product-price">Consultar</span>
-          <a href="https://wa.me/573012803262?text=Hola%2C%20deseo%20consultar%20sobre%20las%20%C3%93pticas%20y%20Accesorios%20Premium%20en%20Armer%C3%ADa%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn">CONSULTAR</a>
+        <div class="product-footer" style="justify-content: center;">
+          <a href="https://wa.me/573012803262?text=Hola%2C%20deseo%20consultar%20sobre%20las%20%C3%93pticas%20y%20Accesorios%20Premium%20en%20Armer%C3%ADa%20VIP" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm product-buy-btn" style="width: 100%; text-align: center; justify-content: center;">CONSULTAR</a>
         </div>
       </div>
     </div>
@@ -4861,12 +4856,13 @@
       ty = e.clientY;
     });
 
-    (function animateCursor() {
+    function animateCursor() {
       cx += (tx - cx) * 0.45;
       cy += (ty - cy) * 0.45;
       cursor.style.transform = 'translate3d(' + cx + 'px, ' + cy + 'px, 0) translate(-50%, -50%)';
       requestAnimationFrame(animateCursor);
-    })();
+    }
+    requestAnimationFrame(animateCursor);
 
     document.querySelectorAll('a, button, .service-card, .hotspot, .open-shop-btn, .product-buy-btn').forEach(el => {
       el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
