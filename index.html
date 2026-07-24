@@ -3106,6 +3106,9 @@
       border: none;
       cursor: pointer;
       transition: color 200ms ease, transform 200ms ease;
+      z-index: 100;
+      padding: 10px;
+      line-height: 1;
     }
 
     .shop-modal-close:hover {
@@ -4751,9 +4754,9 @@
 <!-- ============================================================
      SHOP MODAL (TIENDA TÁCTICA VIP)
 ============================================================ -->
-<div id="shopModal" class="shop-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="shopModalTitle">
+<div id="shopModal" class="shop-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="shopModalTitle" onclick="if(event.target === this) { this.classList.remove('is-open'); document.body.style.overflow = ''; }">
   <div class="shop-modal-container">
-    <button class="shop-modal-close" id="closeShopBtn" aria-label="Cerrar tienda">&times;</button>
+    <button class="shop-modal-close" id="closeShopBtn" aria-label="Cerrar tienda" onclick="document.getElementById('shopModal').classList.remove('is-open'); document.body.style.overflow = '';">&times;</button>
     
     <div class="shop-modal-header">
       <h3 id="shopModalTitle" class="shop-modal-title">Tienda Oficial Armería VIP TECHNOLOGIES SAS</h3>
