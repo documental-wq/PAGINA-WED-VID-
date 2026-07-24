@@ -3098,22 +3098,30 @@
 
     .shop-modal-close {
       position: absolute;
-      top: 20px;
+      top: 24px;
       right: 24px;
-      font-size: 2.2rem;
-      color: var(--color-text-muted);
-      background: none;
-      border: none;
+      width: 42px;
+      height: 42px;
+      font-size: 1.8rem;
+      color: var(--color-text-primary);
+      background: rgba(17, 17, 20, 0.9);
+      border: 1px solid rgba(255, 179, 0, 0.4);
+      border-radius: 50%;
       cursor: pointer;
-      transition: color 200ms ease, transform 200ms ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 250ms ease;
       z-index: 100;
-      padding: 10px;
       line-height: 1;
+      padding: 0;
     }
 
     .shop-modal-close:hover {
-      color: #FFB300;
-      transform: rotate(90deg);
+      color: var(--color-obsidian);
+      background: var(--color-gold);
+      border-color: var(--color-gold);
+      transform: rotate(90deg) scale(1.08);
     }
 
     .shop-modal-header {
