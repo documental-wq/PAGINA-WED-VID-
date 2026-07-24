@@ -2480,10 +2480,29 @@
 
     /* Form */
     .contact-form {
-      background: var(--color-carbon);
-      border: 1px solid var(--color-border);
+      background: rgba(20, 20, 24, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 179, 0, 0.15);
       border-radius: var(--radius-lg);
       padding: var(--space-8);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(255, 179, 0, 0.03);
+    }
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; width: 10px; height: 10px;
+      border-top: 2px solid rgba(255, 179, 0, 0.45);
+      border-left: 2px solid rgba(255, 179, 0, 0.45);
+    }
+    .contact-form::after {
+      content: '';
+      position: absolute;
+      bottom: 0; right: 0; width: 10px; height: 10px;
+      border-bottom: 2px solid rgba(255, 179, 0, 0.45);
+      border-right: 2px solid rgba(255, 179, 0, 0.45);
     }
 
     .form-group {
@@ -2525,7 +2544,7 @@
 
     .form-control:focus {
       border-color: var(--color-gold);
-      box-shadow: 0 0 0 3px rgba(201,162,39,0.1);
+      box-shadow: 0 0 12px rgba(255, 179, 0, 0.22);
     }
 
     .form-control.is-error { border-color: #8B2222; }
@@ -3366,6 +3385,77 @@
       text-overflow: ellipsis;
     }
 
+    /* ── TACTICAL RADAR BACKGROUND OVERLAY ───────────────── */
+    .hero-radar-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(80vw, 800px);
+      height: min(80vw, 800px);
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.08;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .radar-circle {
+      position: absolute;
+      border: 1px solid rgba(255, 179, 0, 0.4);
+      border-radius: 50%;
+    }
+    .radar-circle-1 {
+      width: 100%;
+      height: 100%;
+      border-style: dashed;
+      animation: rotateRadar 60s linear infinite;
+    }
+    .radar-circle-2 {
+      width: 70%;
+      height: 70%;
+      border-style: dotted;
+      animation: rotateRadarReverse 40s linear infinite;
+    }
+    .radar-circle-3 {
+      width: 40%;
+      height: 40%;
+    }
+    .radar-crosshair-h {
+      position: absolute;
+      width: 105%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 179, 0, 0.3) 15%, rgba(255, 179, 0, 0.3) 85%, transparent);
+    }
+    .radar-crosshair-v {
+      position: absolute;
+      height: 105%;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(255, 179, 0, 0.3) 15%, rgba(255, 179, 0, 0.3) 85%, transparent);
+    }
+    @keyframes rotateRadar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes rotateRadarReverse {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    /* ── PROCESS TIMELINE GLOW ───────────────────────────── */
+    .process-line-fill {
+      box-shadow: 0 0 10px rgba(255, 179, 0, 0.8), 0 0 4px rgba(255, 179, 0, 0.4);
+    }
+
+    /* ── VALUE CARD ICON HOVER ANIMATION ─────────────────── */
+    .value-card-icon {
+      transition: transform 450ms cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 300ms ease;
+    }
+    .value-card:hover .value-card-icon {
+      transform: scale(1.12) rotate(8deg);
+      filter: drop-shadow(0 0 6px rgba(255, 179, 0, 0.5));
+    }
+
   </style>
 </head>
 <body>
@@ -3446,6 +3536,15 @@
 
   <!-- Particle Canvas -->
   <canvas id="particleCanvas"></canvas>
+
+  <!-- Tactical Radar Background Overlay -->
+  <div class="hero-radar-overlay" aria-hidden="true">
+    <div class="radar-circle radar-circle-1"></div>
+    <div class="radar-circle radar-circle-2"></div>
+    <div class="radar-circle radar-circle-3"></div>
+    <div class="radar-crosshair-h"></div>
+    <div class="radar-crosshair-v"></div>
+  </div>
 
   <!-- Giant Background Text -->
   <div class="hero-bg-text-container" aria-hidden="true">
